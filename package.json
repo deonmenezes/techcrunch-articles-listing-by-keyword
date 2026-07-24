@@ -1,8 +1,8 @@
 {
-  "name": "learnify",
+  "name": "lyrna",
   "version": "1.0.0",
   "private": true,
-  "description": "Learnify — the latest tech, science & learning, browsable by keyword and source. Making learning addictive.",
+  "description": "Lyrna — the latest tech, science & learning, browsable by keyword and source. Making learning addictive.",
   "type": "module",
   "scripts": {
     "scrape": "python3 scrape.py",

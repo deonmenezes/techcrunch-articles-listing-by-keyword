@@ -1,4 +1,4 @@
-# Learnify (techcrunch-articles-listing-by-keyword)
+# Lyrna (techcrunch-articles-listing-by-keyword)
 
 A static-site tech/science news aggregator that pulls articles from TechCrunch, Wired, The Verge, Ars Technica, and SiliconValley.com, normalizes them, and makes them filterable by keyword, source, and category — with thumbnails. Deployed on Vercel.
 

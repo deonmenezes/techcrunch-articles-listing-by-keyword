@@ -1,11 +1,12 @@
-// GET /api/research — LIVE trending/top research papers for the Learnify app.
+// GET /api/research — LIVE trending/top research papers for the Lyrna app.
 //
 // Sources real papers from lib/papers.js (arXiv newest across cs.AI/LG/CL/CV +
 // OpenAlex recent + OpenAlex most-cited "trending"), de-duplicated, mapped to the
-// app's research schema. Link-out only — links to the canonical source.
+// app's research schema. The canonical source remains the fallback; a reviewed
+// paper may also carry metadata for a separate Lyrna-authored native lesson.
 //
 // Query params (optional):
-//   category  filter by app category value (e.g. "AI / ML", "Science")
+//   category  filter by app category value (e.g. "AI / ML", "Neuroscience")
 //   genre     filter by fine-grained genre (e.g. "Fitness", "Skincare",
 //             "Finance", "Nutrition", "Mind & Psychology", "Space")
 //   limit     max papers (default all)
@@ -13,9 +14,9 @@
 //
 // Response: { generated_at, count, papers: [
 //   { id, title, org, category, genre, summary, citations, trend, url,
-//     original_title, image } ] }
-// `genre` is ADDITIVE (the iOS app ignores unknown fields); `category` still
-// maps every paper into the app's fixed NewsCategory set.
+//     original_title, image, lesson_status, lesson_id, lesson_version } ] }
+// `genre` is ADDITIVE; `category` maps every paper into the shared 23-category
+// NewsCategory set.
 // `title`/`summary` are the precomputed addictive headline + hook from
 // papers-enriched.json (scripts/enrich.mjs) when available — falling back to
 // the raw arXiv/OpenAlex title + abstract. `original_title` always carries the
@@ -24,9 +25,11 @@
 // CORS open. Edge-cached ~30m with stale-while-revalidate so it stays fresh + fast.
 
 import { readFileSync } from "node:fs";
+import { classifyArticle } from "../lib/categories.js";
 import { collectPapers, collectTopicPapers } from "../lib/papers.js";
 import { isRelevantRaw } from "../lib/research-shared.js";
 import { TOPIC_NAMES, findTopic, rollingCutoff } from "../lib/topics.js";
+import { lessonMetadataForResearchPaper } from "../lib/lessons.js";
 
 // Precomputed per-paper enrichment (headline/hook/cover) from scripts/enrich.mjs.
 // Same readFileSync-try/catch convention as the enriched.json article cache —
@@ -38,38 +41,16 @@ function loadPapersEnriched() {
   } catch { return {}; }
 }
 
-// The app DROPS any paper whose `category` is not one of these exact NewsCategory
-// rawValues: "AI / ML", "Robotics", "Coding & Dev Tools", "Startups & Funding",
-// "Hardware & Gadgets", "Security", "Science", "Fitness", "Skincare".
-// ("Fitness"/"Skincare" are NEW — the iOS side is adding matching enum cases;
-// old app builds silently drop them, which is the intended safe degradation.)
-// Papers now span all categories via arXiv breadth (cs.RO, cs.CR, cs.SE, cs.PL,
-// cs.AR, cs.HC, eess.SY, cond-mat.mtrl-sci, q-bio.BM, physics.app-ph) and
-// OpenAlex concepts. Classifier order: most-specific first, AI/ML last as default.
-// RELEVANCE GATE — isRelevantRaw/looksLikeJunk now live in lib/research-shared.js
-// (shared with scripts/enrich.mjs so we only enrich papers that actually ship).
-
-// The app DROPS any paper whose `category` is not one of these exact NewsCategory
-// rawValues: "AI / ML", "Robotics", "Coding & Dev Tools", "Startups & Funding",
-// "Hardware & Gadgets", "Security", "Science", "Fitness", "Skincare".
-// Classifier order: most-specific first; life/physical-science (incl. medicine)
-// goes BEFORE the Coding bucket so force-tagged medical papers route to Science,
-// AI/ML last as default.
-// Force-tagged genre sections (lib/papers.js OA_TOPICS) → app category.
-// Fitness + Skincare route to NEW app-category rawValues ("Fitness"/"Skincare")
-// — the iOS side is adding matching NewsCategory enum cases; older app builds
-// silently drop unknown categories (intended safe degradation). The remaining
-// human-science genres still ride the app's "Science" bucket; money rides
-// "Startups & Funding". The fine-grained genre also ships in the additive
-// `genre` field below.
+// Legacy force-tagged OpenAlex sections predate the exact-topic endpoint. Route
+// them into the nearest member of the shared taxonomy; unlisted sections use
+// the same classifier as the article feed.
 const TAG_TO_APP = {
   "fitness exercise": "Fitness",
   "skincare dermatology": "Skincare",
-  "nutrition diet": "Science",
-  "psychology mind": "Science",
-  "longevity health": "Science",
-  "science discovery": "Science",
-  "finance investing": "Startups & Funding",
+  "nutrition diet": "Medicine & Health",
+  "psychology mind": "Psychology",
+  "longevity health": "Medicine & Health",
+  "finance investing": "Economics",
 };
 
 // Fine-grained genre for the website/genre filters — ADDITIVE field, the iOS
@@ -101,36 +82,11 @@ function toGenre(p, appCategory) {
 }
 
 function toAppCategory(p) {
-  const hay = `${p.section || ""} ${(p.categories || []).join(" ")} ${p.id || ""} ${p.title || ""}`.toLowerCase();
-  const title = (p.title || "").toLowerCase();
-
-  // Force-tagged genre picks route directly (before any keyword heuristics)
+  // Exact-topic responses are already validated against the canonical registry.
+  // Preserve that topic instead of trying to infer it again from a short title.
+  if (p.topic && findTopic(p.topic)) return p.topic;
   if (TAG_TO_APP[p.section]) return TAG_TO_APP[p.section];
-
-  // Robotics — specific enough to go first
-  if (/\brobot|locomotion|quadruped|manipulation|\bcs\.ro\b/.test(hay)) return "Robotics";
-
-  // Security / Cryptography
-  if (/secur|cryptograph|adversarial|malware|vulnerab|\bcs\.cr\b/.test(hay)) return "Security";
-
-  // Life / physical sciences & medicine → Science (judged on the TITLE, before
-  // the Coding bucket, so a force-tagged "software engineering" medical paper
-  // can't masquerade as Coding & Dev Tools).
-  if (/disease|clinical|patient|cancer|tumou?r|oncolog|epidemiolog|mortalit|metaboli|metabolom|cytometr|genom|protein|biomarker|therap|diagnos|vaccine|\bcell\b|molecul|chemi|materials|cond-mat|\bphysics\b|astro|\btelescope\b|interferometr|exoplanet|radial[- ]velocity|cosmolog|climate|neurosci|q-bio|biolog|supercond|\bquantum\b/.test(title)) return "Science";
-
-  // Coding & Dev Tools — software eng + PL before generic CS catch-alls
-  if (/software engineering|programming language|compiler|\bcode\b|developer|debug|\bcs\.se\b|\bcs\.pl\b|static analysis|software dev/.test(hay)) return "Coding & Dev Tools";
-
-  // Hardware & Gadgets — silicon, chips, architecture, photonics, systems
-  if (/semiconduct|\bhardware\b|fpga|circuit|photonic|\bgpu\b|accelerator|\bchip\b|\basic\b|\bcs\.ar\b|applied physics|\beess\b/.test(hay)) return "Hardware & Gadgets";
-
-  // Science — materials, physics, bio, chemistry, earth sciences (from any field)
-  if (/supercond|materials|cond-mat|physics|biolog|chemi|astro|quantum|genom|protein|climate|neurosci|q-bio|biomolecul/.test(hay)) return "Science";
-
-  // Startups & Funding — light signal; only if nothing more specific matched
-  if (/venture|startup|fundrais|business model|q-fin|econ\.gn|market dynamics/.test(hay)) return "Startups & Funding";
-
-  return "AI / ML"; // arXiv cs.AI/LG/CL/CV + OpenAlex AI concepts default to AI/ML
+  return classifyArticle(p);
 }
 
 // A 0…99 momentum score: most-cited "trending" papers scale by citations; fresh
@@ -199,6 +155,7 @@ function toResearch(p, enr, base) {
     content_endpoint: p.content_endpoint || null,
     pmcid: p.pmcid || null,
     pmid: p.pmid || null,
+    ...lessonMetadataForResearchPaper(p),
   };
 }
 

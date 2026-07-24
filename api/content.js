@@ -61,7 +61,7 @@ export async function resolveEuropePmcId(pmid, { fetchImpl = fetch, timeoutMs = 
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetchImpl(url, {
-      headers: { Accept: "application/json", "User-Agent": "Learnify/1.0 (support@techscroll.app)" },
+      headers: { Accept: "application/json", "User-Agent": "Lyrna/1.0 (support@techscroll.app)" },
       redirect: "error",
       signal: controller.signal,
     });
@@ -93,7 +93,7 @@ export async function fetchEuropePmcXml(pmcid, { fetchImpl = fetch, timeoutMs = 
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetchImpl(url, {
-      headers: { Accept: "application/xml, text/xml;q=0.9", "User-Agent": "Learnify/1.0 (support@techscroll.app)" },
+      headers: { Accept: "application/xml, text/xml;q=0.9", "User-Agent": "Lyrna/1.0 (support@techscroll.app)" },
       redirect: "error",
       signal: controller.signal,
     });
@@ -174,7 +174,7 @@ export default async function handler(req, res) {
         canonical_url: `https://europepmc.org/articles/${resolvedPmcid}`,
         attribution: `${workLabel}${authors ? ` — ${authors}` : ""}. Full text provided by Europe PMC under ${content.license.id}.`,
         copyright_notice: content.copyrightNotice || null,
-        adaptation_notice: "Formatted into structured plain text by Learnify; figures, tables, and non-text media may be omitted.",
+        adaptation_notice: "Formatted into structured plain text by Lyrna; figures, tables, and non-text media may be omitted.",
         body_source: "Europe PMC",
         body_source_url: europePmcApiUrl(resolvedPmcid),
         rights_provenance_at: checkedAt,

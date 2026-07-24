@@ -199,9 +199,63 @@ test("unknown topic API requests fail closed with the complete canonical list", 
   assert.deepEqual(response.body.topics, EXPECTED_TOPICS);
 });
 
+test("research API exposes native-lesson metadata for a reviewed paper", async () => {
+  const originalFetch = global.fetch;
+  global.fetch = async () => ({
+    ok: true,
+    async text() {
+      return JSON.stringify({
+        results: [work({
+          id: "https://openalex.org/W4400000000",
+          doi: "https://doi.org/10.1007/s11704-026-60308-3",
+          title: "A Survey of Large Language Models",
+          publication_date: "2026-05-09",
+          primary_location: {
+            source: {
+              display_name: "Frontiers of Computer Science",
+              type: "journal",
+              is_core: true,
+            },
+          },
+          abstract_inverted_index: {
+            Large: [0],
+            language: [1],
+            models: [2],
+            survey: [3],
+          },
+          concepts: [{ display_name: "Artificial intelligence", score: 0.95 }],
+        })],
+      });
+    },
+  });
+  const response = {
+    headers: {},
+    setHeader(name, value) { this.headers[name] = value; },
+    status(code) { this.statusCode = code; return this; },
+    json(body) { this.body = body; return this; },
+    end() { return this; },
+  };
+  try {
+    await researchHandler({
+      method: "GET",
+      query: { topic: "AI / ML", limit: "1" },
+      headers: { host: "localhost:3000" },
+    }, response);
+  } finally {
+    global.fetch = originalFetch;
+  }
+
+  assert.equal(response.statusCode, 200);
+  assert.equal(response.body.count, 1);
+  assert.equal(response.body.papers[0].lesson_status, "available");
+  assert.equal(response.body.papers[0].lesson_mode, "original_synthesis");
+  assert.equal(response.body.papers[0].lesson_id, "lesson_llm_foundations");
+  assert.equal(response.body.papers[0].knowledge_check_count, 2);
+});
+
 test("research UI exposes honest states and routes papers through the in-app detail view", () => {
   const html = readFileSync(new URL("../app/research.html", import.meta.url), "utf8");
-  for (const phrase of ["Loading recent papers", "Research could not be loaded", "No recent papers found", "Read in Learnify"]) {
+  for (const phrase of ["Loading recent papers", "Research could not be loaded", "No recent papers found", "Read in Lyrna"]) {
     assert.ok(html.includes(phrase), phrase);
   }
   assert.ok(html.includes("TOPIC_NAMES"));

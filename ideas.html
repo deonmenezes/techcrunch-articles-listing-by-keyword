@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Learnify — Video Ideas: turn the latest tech news into content</title>
+<title>Lyrna — Video Ideas: turn the latest tech news into content</title>
 <meta name="description" content="A live feed of video ideas for creators — every breaking tech story comes with a ready hook, talking points, caption and hashtags. Grab the cover, copy the script, post." />
 <meta name="theme-color" content="#0B0B0D" />
-<meta property="og:title" content="Learnify — Video Ideas for creators" />
+<meta property="og:title" content="Lyrna — Video Ideas for creators" />
 <meta property="og:description" content="Turn today's breaking tech news into your next video — hook, talking points, caption & hashtags, ready to copy." />
 <meta property="og:type" content="website" />
-<link rel="icon" href="/assets/learnify/mark.svg" />
-<link rel="apple-touch-icon" href="/assets/learnify/app-icon-1024.png" />
+<link rel="icon" href="/assets/lyrna/mark.svg" />
+<link rel="apple-touch-icon" href="/assets/lyrna/app-icon-1024.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
@@ -75,7 +75,7 @@
     display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   }
   .brand { display: flex; align-items: center; gap: 13px; }
-  /* Learnify green-L monogram tile */
+  /* Lyrna green-L monogram tile */
   .brand-logo {
     width: 36px; height: 36px; flex: 0 0 auto; border-radius: 10px;
     display: grid; place-items: center;
@@ -314,7 +314,7 @@
         <span class="l-mark">L</span>
       </span>
       <div class="brand-text">
-        <h1>Learnify</h1>
+        <h1>Lyrna</h1>
         <span class="tag">video ideas — <b>news → your next post</b></span>
       </div>
     </div>
@@ -344,11 +344,11 @@
 
 <footer>
   <div class="footer-inner">
-    <span class="fbrand"><span class="l-mark-sm">L</span>Learnify</span> — a live visual board of the latest Silicon Valley / SF tech news, aggregated from public feeds, X, Bluesky and research. Every tile links back to the original source.
+    <span class="fbrand"><span class="l-mark-sm">L</span>Lyrna</span> — a live visual board of the latest Silicon Valley / SF tech news, aggregated from public feeds, X, Bluesky and research. Every tile links back to the original source.
     <div class="links">
       <a href="/">Feed</a><a href="/influencer">Influencer scripts</a><a href="/influencers">For creators</a><a href="/privacy">Privacy</a><a href="/support">Support</a>
     </div>
-    <p class="legal">Cover images are generated/licensed visuals Learnify controls — not the publishers' photos. Headlines and summaries are shown under fair-use aggregation with attribution and a link to the source. Learnify is independent and not affiliated with the outlets shown.</p>
+    <p class="legal">Cover images are generated/licensed visuals Lyrna controls — not the publishers' photos. Headlines and summaries are shown under fair-use aggregation with attribution and a link to the source. Lyrna is independent and not affiliated with the outlets shown.</p>
   </div>
 </footer>
 
@@ -420,7 +420,7 @@ function makeCaption(a){
 }
 function makeScript(a){
   const pts = makePoints(a).map((p,i)=>`  ${i+1}. ${p}`).join("\n");
-  return `🎬 ${a.title}\n\nHOOK:\n${makeHook(a)}\n\nTALKING POINTS:\n${pts}\n\nOUTRO:\n"Follow @learnify for tomorrow's tech news first."\n\nCAPTION:\n${makeCaption(a)}\n\nSource: ${a.link}`;
+  return `🎬 ${a.title}\n\nHOOK:\n${makeHook(a)}\n\nTALKING POINTS:\n${pts}\n\nOUTRO:\n"Follow Lyrna for tomorrow's tech news first."\n\nCAPTION:\n${makeCaption(a)}\n\nSource: ${a.link}`;
 }
 
 function render(){
