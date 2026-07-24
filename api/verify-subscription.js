@@ -1,4 +1,4 @@
-// POST /api/verify-subscription — server-side Learnify Pro entitlement check.
+// POST /api/verify-subscription — server-side Lyrna Pro entitlement check.
 //
 // Body (JSON): { transactionId }  — any StoreKit 2 Transaction.id (or
 // originalTransactionId) from the Pro subscription group.

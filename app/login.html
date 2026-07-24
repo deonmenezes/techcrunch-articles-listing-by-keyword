@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sign in · Learnify</title>
+<title>Sign in · Lyrna</title>
 <meta name="theme-color" content="#0B0B0D" />
-<link rel="icon" href="/assets/learnify/mark.svg" />
-<link rel="apple-touch-icon" href="/assets/learnify/app-icon-1024.png" />
+<link rel="icon" href="/assets/lyrna/mark.svg" />
+<link rel="apple-touch-icon" href="/assets/lyrna/app-icon-1024.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/app/app.css" />
@@ -48,7 +48,7 @@
 </head>
 <body>
 <div class="auth card">
-  <div class="brand"><span class="ts">L</span> Learnify</div>
+  <div class="brand"><span class="ts">L</span> Lyrna</div>
   <h1 id="title">Welcome back</h1>
   <div class="sub" id="subtitle">Sign in to your Brain Bank — your saved knowledge, streaks &amp; XP.</div>
 
@@ -102,12 +102,12 @@ function showSignedIn(u) {
   const email = u.email || (u.user_metadata && u.user_metadata.email) || "your account";
   const initial = (email[0] || "U").toUpperCase();
   document.querySelector(".auth").innerHTML = `
-    <div class="brand"><span class="ts">L</span> Learnify</div>
+    <div class="brand"><span class="ts">L</span> Lyrna</div>
     <div class="signed-in">
       <h1 id="title">You're already signed in</h1>
       <div class="who"><span class="av">${initial}</span></div>
       <div class="em">as <b>${window.TS.esc(email)}</b></div>
-      <button class="btn primary block" id="continueBtn">Continue to Learnify</button>
+      <button class="btn primary block" id="continueBtn">Continue to Lyrna</button>
       <button class="signout" id="signoutBtn">Sign out</button>
     </div>`;
   F("continueBtn").onclick = () => { location.href = next; };

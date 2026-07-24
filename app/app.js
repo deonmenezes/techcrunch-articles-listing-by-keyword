@@ -1,4 +1,4 @@
-/* Learnify web app — shared client logic.
+/* Lyrna web app — shared client logic.
    Same Supabase project + auth.users as the iOS app; cloud data in ts_* tables.
    Soft-auth: guests browse freely; per-user features no-op or prompt sign-in. */
 (function () {
@@ -52,10 +52,12 @@
   }
 
   function track(event, properties) {
-    if (window.LearnifyAnalytics) { window.LearnifyAnalytics.track(event, properties || {}); return; }
+    if (window.LyrnaAnalytics) { window.LyrnaAnalytics.track(event, properties || {}); return; }
     try {
-      if (localStorage.getItem("learnify.analytics.consent.v1") !== "granted") return;
-      const queue = window.learnifyAnalyticsQueue = window.learnifyAnalyticsQueue || [];
+      const consent = localStorage.getItem("lyrna.analytics.consent.v1")
+        || localStorage.getItem("learnify.analytics.consent.v1");
+      if (consent !== "granted") return;
+      const queue = window.lyrnaAnalyticsQueue = window.lyrnaAnalyticsQueue || [];
       if (queue.length < 20) queue.push([event, properties || {}]);
     } catch (_) {}
   }
@@ -155,7 +157,7 @@
     const guest = !profile || profile.guest;
     el.className = "nav";
     el.innerHTML = `<div class="nav-inner">
-      <a class="logo" href="/app/"><span class="ts">L</span> Learnify</a>
+      <a class="logo" href="/app/"><span class="ts">L</span> Lyrna</a>
       <nav class="nav-links">${links.map(([n, h]) => `<a href="${h}" class="${n === active ? "active" : ""}">${n}</a>`).join("")}</nav>
       <div class="nav-right">
         <a class="nav-search" href="/app/?focus=1"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg> Search</a>
@@ -168,7 +170,7 @@
         </span>`}
       </div></div>`;
     if (guest) { const b = $("#navSignin"); if (b) b.onclick = () => { track("sign_in_prompted", { feature: "navigation" }); location.href = signInUrl(); }; }
-    else { $("#navUser").onclick = async () => { if (confirm("Sign out of Learnify?")) { await sb.auth.signOut(); location.href = "/app/"; } }; }
+    else { $("#navUser").onclick = async () => { if (confirm("Sign out of Lyrna?")) { await sb.auth.signOut(); location.href = "/app/"; } }; }
   }
 
   window.TS = { sb, getUser, getUserOptional, signInUrl, requireAuth, loadProfile, leaderboard, articles, articleId, savedIds, savedList,

@@ -1,4 +1,4 @@
-# Learnify
+# Lyrna
 
 Latest **tech, science & learning news** — **with images**,
 aggregated locally from multiple outlets and made browsable **by keyword and
@@ -71,7 +71,7 @@ Privacy-gated, aggregate product analytics is available through the existing Ver
 
 ## Research topics
 
-Learnify provides 23 exact research-topic feeds backed by OpenAlex and enforced by a server-side rolling two-year freshness gate. Topic cards are labeled as research papers and identify the indexed journal/publisher. PubMed/PMC-identified papers can be checked against Europe PMC and rendered only after an exact supported open license is verified server-side; all other records remain abstract/summary plus source link. See **[DATA_SOURCES.md](DATA_SOURCES.md)** for the complete frontend-to-provider path, query mappings, exclusions, freshness semantics, limitations, environment variables, and verification steps.
+Lyrna provides 23 exact research-topic feeds backed by OpenAlex and enforced by a server-side rolling two-year freshness gate. Topic cards are labeled as research papers and identify the indexed journal/publisher. PubMed/PMC-identified papers can be checked against Europe PMC and rendered only after an exact supported open license is verified server-side; all other records remain abstract/summary plus source link. See **[DATA_SOURCES.md](DATA_SOURCES.md)** for the complete frontend-to-provider path, query mappings, exclusions, freshness semantics, limitations, environment variables, and verification steps.
 
 ## Deploy
 
@@ -84,7 +84,7 @@ vercel --prod
 
 ## Attribution & legal
 
-**Learnify is an independent news reader and is not affiliated with, endorsed
+**Lyrna is an independent news reader and is not affiliated with, endorsed
 by, or sponsored by** TechCrunch, SiliconValley.com, Wired, The Verge, Ars
 Technica, or their owners. All article headlines, summaries, images, content and
 trademarks belong to their respective publishers and are referenced here only
@@ -99,5 +99,5 @@ identify where each item came from.
 **Rights holders:** to request removal of any item, email
 `support@techscroll.app`.
 
-> The name "Learnify" should be cleared against existing trademarks
+> The name "Lyrna" should be cleared against existing trademarks
 > (USPTO / EUIPO / your jurisdiction) before any commercial launch.

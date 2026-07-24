@@ -1,4 +1,4 @@
-# TechScroll — Product Requirements Document (PRD) · v2
+# Lyrna — Product Requirements Document (PRD) · v2
 
 **Working title:** TechScroll v2 — Feature Expansion (Caught-Up Score · Article Images · Doomscroll · Cross-Platform Parity)
 **Platforms:** iOS 17+ (native SwiftUI, Xcode 16+) · Android (Expo / React Native, RN 0.85.3 / React 19.2 / expo ~56) · Web (Vercel static `index.html` + serverless `/api/*`)
@@ -314,7 +314,7 @@ Four shared invariants: **(1)** render `mediaURL` (**never** the publisher image
 
 **6.4.1 iOS** (`ArticleCardView.swift`, `SavedView.swift`)
 - Replace `categoryBanner`'s placeholder with `AsyncImage(url: article.mediaURL)` (no policy gate needed); keep the 124pt banner + `UnevenRoundedRectangle` top corners + bottom-fade + `categoryBadge`.
-- **Caching:** bump `URLCache.shared` in `TechScrollApp.swift` (12 MB/48 MB → **~40 MB mem / 200 MB disk**); adopt **Nuke (`LazyImage`)** for explicit downsampling if `AsyncImage` is insufficient. Decode off-main-thread.
+- **Caching:** bump `URLCache.shared` in `LyrnaApp.swift` (12 MB/48 MB → **~40 MB mem / 200 MB disk**); adopt **Nuke (`LazyImage`)** for explicit downsampling if `AsyncImage` is insufficient. Decode off-main-thread.
 - Loading → `ShimmerView`; `.failure` → gradient/monogram.
 - **Attribution:** when `mediaKind == .stock`, render `mediaCredit` in `.tsCaption` on the bottom scrim (lint-level invariant in `Components.swift`). AI/gradient need no credit but show a subtle **"illustration"** tag (IR1).
 - **a11y / reduced-data:** `.accessibilityLabel("Illustration for: \(title)")` (ai) / `"Photo: \(mediaCredit)"` (stock); a **reduced-data toggle** in `SettingsView` drops to the gradient tile.
@@ -411,7 +411,7 @@ Both signals computed **on-device** from the stable `article.id` (no server roun
 - **Paging:** `ScrollView(.vertical)` + `LazyVStack` with `.scrollTargetBehavior(.paging)` + `.containerRelativeFrame(.vertical)` per card (iOS 17+) — true paging *with* lazy loading, smoother than the rotated-`TabView(.page)` hack. Bind via `.scrollPosition(id: $currentArticleID)`; mirror the existing `.scrollTransition(.interactive, …)` from `FeedView.swift`.
 - **Data:** consume the **same `FeedViewModel` / `appState.feed`** (`FeedServicing`); preserve `loadGeneration` + dedup-by-id. `APIFeedService.catalogURL` already requests `?limit=200` *"so the doomscroll feed has plenty of depth"* — pre-wired.
 - **Image:** full-bleed `AsyncImage(url: article.mediaURL)` — our license-clean image at full resolution; `ShimmerView` loading, gradient fallback; decode off-main-thread, downsample to screen size.
-- **Prefetch:** `ImagePrefetcher` keyed by `mediaURL` warms **±2 cards** via `URLSession`/`URLCache` (raise the disk budget in `TechScrollApp.swift`); trigger `loadMoreIfNeeded` at `currentIndex ≥ count − 3`.
+- **Prefetch:** `ImagePrefetcher` keyed by `mediaURL` warms **±2 cards** via `URLSession`/`URLCache` (raise the disk budget in `LyrnaApp.swift`); trigger `loadMoreIfNeeded` at `currentIndex ≥ count − 3`.
 - **Link-out:** CTA/tap presents `ArticleDetailView → SafariView` (`SFSafariViewController`) — unchanged.
 - **Accent:** `accent_hex` → fallback `CIAreaAverage` downsample of the loaded `UIImage` to ~10×10, clamped mid-luminance, cached per `article.id`; composite over `Palette.background`, text white.
 

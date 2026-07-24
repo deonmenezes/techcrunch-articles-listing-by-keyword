@@ -12,12 +12,15 @@ import {
 import { parseFeed, parseYouTubeChannelPage, SOURCES } from "../lib/feeds.js";
 
 const CANONICAL_CATEGORIES = [
-  "AI / ML", "Robotics", "Coding & Dev Tools", "Startups & Funding",
-  "Hardware & Gadgets", "Learning & Career", "Security", "Crypto / Web3",
-  "Science", "Big Tech", "Fitness", "Skincare",
+  "AI / ML", "Robotics", "Coding & Dev Tools", "Hardware & Gadgets",
+  "Security", "Crypto / Web3", "Big Tech", "Physics & Space",
+  "Biology & Life Sciences", "Chemistry & Materials", "Neuroscience",
+  "Medicine & Health", "Climate & Environment", "Earth Sciences",
+  "Mathematics", "Psychology", "Economics", "Social Sciences", "Energy",
+  "Startups & Funding", "Learning & Career", "Fitness", "Skincare",
 ];
 
-test("taxonomy exactly matches the twelve iOS NewsCategory raw values", () => {
+test("taxonomy exactly matches the twenty-three iOS NewsCategory raw values", () => {
   assert.deepEqual(APP_CATEGORY_VALUES, CANONICAL_CATEGORIES);
 });
 
@@ -29,16 +32,24 @@ test("category query accepts canonical and short labels as comma-separated OR", 
   assert.deepEqual(parseCategoryQuery(["Startups,crypto", "Fitness"]), [
     "Startups & Funding", "Crypto / Web3", "Fitness",
   ]);
+  assert.deepEqual(parseCategoryQuery("Science"), [
+    "Physics & Space", "Biology & Life Sciences", "Chemistry & Materials",
+    "Neuroscience", "Medicine & Health", "Climate & Environment",
+    "Earth Sciences", "Mathematics", "Energy",
+  ]);
 });
 
 test("category query filters with OR semantics and is inert when absent", () => {
   const input = [
     { id: "ai", app_category: "AI / ML" },
     { id: "coding", app_category: "Coding & Dev Tools" },
-    { id: "science", app_category: "Science" },
+    { id: "physics", app_category: "Physics & Space" },
+    { id: "medicine", app_category: "Medicine & Health" },
   ];
   assert.equal(filterByCategoryQuery(input, undefined), input);
-  assert.deepEqual(filterByCategoryQuery(input, "AI,Science").map((article) => article.id), ["ai", "science"]);
+  assert.deepEqual(filterByCategoryQuery(input, "AI,Science").map((article) => article.id), [
+    "ai", "physics", "medicine",
+  ]);
   assert.deepEqual(filterByCategoryQuery(input, "not-a-category"), []);
 });
 
@@ -47,20 +58,31 @@ test("classifier mirrors iOS priority and can emit every canonical category", ()
     [{ section: "Artificial Intelligence" }, "AI / ML"],
     [{ categories: ["Drones"] }, "Robotics"],
     [{ categories: ["Developer tools"] }, "Coding & Dev Tools"],
-    [{ section: "Fundraising" }, "Startups & Funding"],
     [{ section: "Hardware" }, "Hardware & Gadgets"],
-    [{ categories: ["Tutorial"] }, "Learning & Career"],
     [{ section: "Security" }, "Security"],
-    [{ categories: ["Blockchain"] }, "Crypto / Web3"],
-    [{ section: "Science" }, "Science"],
+    [{ categories: ["Cryptocurrency"] }, "Crypto / Web3"],
     [{ section: "Apps" }, "Big Tech"],
+    [{ categories: ["Exoplanet telescope"] }, "Physics & Space"],
+    [{ categories: ["Genomics and cell biology"] }, "Biology & Life Sciences"],
+    [{ categories: ["Polymer chemistry"] }, "Chemistry & Materials"],
+    [{ categories: ["Neural circuits in the brain"] }, "Neuroscience"],
+    [{ categories: ["Clinical patient health"] }, "Medicine & Health"],
+    [{ categories: ["Climate change and biodiversity"] }, "Climate & Environment"],
+    [{ categories: ["Geology and earthquakes"] }, "Earth Sciences"],
+    [{ categories: ["Algebra theorem"] }, "Mathematics"],
+    [{ categories: ["Psychology and motivation"] }, "Psychology"],
+    [{ categories: ["Economics and inflation"] }, "Economics"],
+    [{ categories: ["Sociology and inequality"] }, "Social Sciences"],
+    [{ categories: ["Renewable energy power grid"] }, "Energy"],
+    [{ section: "Fundraising" }, "Startups & Funding"],
+    [{ categories: ["Tutorial"] }, "Learning & Career"],
     [{ categories: ["Exercise"] }, "Fitness"],
     [{ categories: ["Dermatology"] }, "Skincare"],
   ];
 
   for (const [article, expected] of cases) assert.equal(classifyArticle(article), expected);
   assert.equal(classifyArticle({ section: "Security", categories: ["Fitness"] }), "Fitness");
-  assert.equal(classifyArticle({ region: "Research" }), "Science");
+  assert.equal(classifyArticle({ region: "Research" }), "Biology & Life Sciences");
 });
 
 test("balancing covers available categories and preserves order within each category", () => {
@@ -69,19 +91,19 @@ test("balancing covers available categories and preserves order within each cate
     { id: "ai-2", app_category: "AI / ML" },
     { id: "code-1", app_category: "Coding & Dev Tools" },
     { id: "ai-3", app_category: "AI / ML" },
-    { id: "science-1", app_category: "Science" },
+    { id: "physics-1", app_category: "Physics & Space" },
     { id: "code-2", app_category: "Coding & Dev Tools" },
   ];
 
   const output = balanceByCategory(input);
-  assert.deepEqual(output.slice(0, 3).map((article) => article.id), ["ai-1", "code-1", "science-1"]);
-  for (const category of ["AI / ML", "Coding & Dev Tools", "Science"]) {
+  assert.deepEqual(output.slice(0, 3).map((article) => article.id), ["ai-1", "code-1", "physics-1"]);
+  for (const category of ["AI / ML", "Coding & Dev Tools", "Physics & Space"]) {
     assert.deepEqual(
       output.filter((article) => article.app_category === category).map((article) => article.id),
       input.filter((article) => article.app_category === category).map((article) => article.id),
     );
   }
-  assert.deepEqual(input.map((article) => article.id), ["ai-1", "ai-2", "code-1", "ai-3", "science-1", "code-2"]);
+  assert.deepEqual(input.map((article) => article.id), ["ai-1", "ai-2", "code-1", "ai-3", "physics-1", "code-2"]);
 });
 
 test("balancing never promotes an older freshness cohort for category coverage", () => {
@@ -89,11 +111,11 @@ test("balancing never promotes an older freshness cohort for category coverage",
   const input = [
     { id: "fresh-ai-1", app_category: "AI / ML", published: "2026-07-20T11:00:00Z" },
     { id: "fresh-ai-2", app_category: "AI / ML", published: "2026-07-20T10:00:00Z" },
-    { id: "older-science", app_category: "Science", published: "2026-07-19T10:00:00Z" },
+    { id: "older-physics", app_category: "Physics & Space", published: "2026-07-19T10:00:00Z" },
   ];
 
   assert.deepEqual(balanceByCategory(input, now).map((article) => article.id), [
-    "fresh-ai-1", "fresh-ai-2", "older-science",
+    "fresh-ai-1", "fresh-ai-2", "older-physics",
   ]);
 });
 
@@ -103,7 +125,7 @@ test("withAppCategory adds a canonical field without mutating the input", () => 
   assert.equal(input.app_category, undefined);
 });
 
-test("educational YouTube sources are canonical, categorized video feeds", () => {
+test("educational YouTube sources carry category or broad science hints", () => {
   const expected = new Map([
     ["youtube-fireship", ["UCsBjURrPoezykLs9EqgamOA", "Coding & Dev Tools", "@Fireship"]],
     ["youtube-two-minute-papers", ["UCbfYPyITQ-7l4upoX8nvctg", "AI / ML", "@TwoMinutePapers"]],

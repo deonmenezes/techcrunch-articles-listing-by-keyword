@@ -1,4 +1,4 @@
-// GET /api/articles — mobile-friendly multi-source Learnify feed (JSON).
+// GET /api/articles — mobile-friendly multi-source Lyrna feed (JSON).
 //
 // Query params (all optional):
 //   q        full-text search across title, summary, keywords, author, source
@@ -42,6 +42,7 @@ import {
   CONTENT_TYPES,
   filterByContentTypeQuery,
 } from "../lib/feed-query.js";
+import { lessonMetadataForArticle } from "../lib/lessons.js";
 
 function pickInt(v, dflt, min, max) {
   const n = parseInt(Array.isArray(v) ? v[0] : v, 10);
@@ -119,6 +120,7 @@ export default async function handler(req, res) {
     const out = withMedia.map((article) => ({
       ...article,
       ...normalizedRightsMetadata(article, { checkedAt: rightsProvenanceAt }),
+      ...lessonMetadataForArticle(article),
     }));
 
     res.setHeader("Content-Type", "application/json; charset=utf-8");
