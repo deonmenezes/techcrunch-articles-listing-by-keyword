@@ -48,13 +48,24 @@ test("only reviewed discovery matches are lesson eligible", () => {
 });
 
 test("built-in original lesson passes evidence and knowledge-check validation", () => {
-  for (const lessonID of ["lesson_ai_terms_foundations", "lesson_llm_foundations"]) {
+  const lessonIDs = [
+    "lesson_ai_terms_foundations",
+    "lesson_llm_foundations",
+    "lesson_cybersecurity_everyday_defense",
+    "lesson_web_request_journey",
+    "lesson_research_claims",
+    "lesson_sleep_and_memory",
+    "lesson_compounding_and_risk",
+  ];
+  for (const lessonID of lessonIDs) {
     const lesson = lessonForID(lessonID);
     const result = validateLesson(lesson);
     assert.deepEqual(result, { valid: true, errors: [] });
     assert.equal(lesson.mode, "original_synthesis");
     assert.equal(lesson.provenance.discovery_body_used, false);
     assert.ok(lesson.sources.length >= 2);
+    assert.ok(lesson.reading_time_minutes <= 6);
+    assert.equal(lesson.blocks.filter((block) => block.type === "knowledge_check").length, 2);
     assert.ok(lesson.sources.some((source) => source.role === "primary_evidence" || source.role === "authoritative_evidence"));
     assert.ok(lesson.blocks.filter((block) => block.type === "knowledge_check").every((check) =>
       check.evidence_block_ids.length > 0 && check.source_ids.length > 0
@@ -132,19 +143,31 @@ test("lesson catalog exposes every reviewed lesson without lesson body blocks", 
   assert.deepEqual(catalog.map((item) => item.lesson_id), [
     "lesson_ai_terms_foundations",
     "lesson_llm_foundations",
+    "lesson_cybersecurity_everyday_defense",
+    "lesson_web_request_journey",
+    "lesson_research_claims",
+    "lesson_sleep_and_memory",
+    "lesson_compounding_and_risk",
   ]);
   assert.ok(catalog.every((item) =>
     item.lesson_status === "available" &&
     item.lesson_mode === "original_synthesis" &&
-    item.category === "AI / ML" &&
     !("blocks" in item) &&
     !("sources" in item)
   ));
+  assert.deepEqual([...new Set(catalog.map((item) => item.category))], [
+    "AI / ML",
+    "Security",
+    "Coding & Dev Tools",
+    "Learning & Career",
+    "Neuroscience",
+    "Economics",
+  ]);
 
   const res = response();
   await lessonHandler({ method: "GET", query: { catalog: "1" }, headers: {} }, res);
   assert.equal(res.statusCode, 200);
-  assert.equal(res.body.count, 2);
+  assert.equal(res.body.count, 7);
   assert.equal(res.body.lessons[0].label, "Lyrna Lesson");
   assert.equal(res.headers["X-Content-Type-Options"], "nosniff");
 });
