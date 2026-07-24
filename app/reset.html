@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Set a new password · Learnify</title>
+<title>Set a new password · Lyrna</title>
 <meta name="theme-color" content="#0B0B0D" />
-<link rel="icon" href="/assets/learnify/mark.svg" />
-<link rel="apple-touch-icon" href="/assets/learnify/app-icon-1024.png" />
+<link rel="icon" href="/assets/lyrna/mark.svg" />
+<link rel="apple-touch-icon" href="/assets/lyrna/app-icon-1024.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/app/app.css" />
@@ -31,7 +31,7 @@
 </head>
 <body>
 <div class="auth card">
-  <div class="brand"><span class="ts">L</span> Learnify</div>
+  <div class="brand"><span class="ts">L</span> Lyrna</div>
   <h1 id="title">Set a new password</h1>
   <div class="sub" id="subtitle">Choose a new password for your account.</div>
 
@@ -89,7 +89,7 @@ F("form").onsubmit = async (e) => {
   try {
     const { error } = await sb.auth.updateUser({ password });
     if (error) throw error;
-    F("ok").textContent = "Password updated — taking you to Learnify…";
+    F("ok").textContent = "Password updated — taking you to Lyrna…";
     setTimeout(() => { location.href = "/app/"; }, 1100);
   } catch (err) {
     F("err").textContent = (err && err.message) || "Couldn't update the password. Request a new reset link.";

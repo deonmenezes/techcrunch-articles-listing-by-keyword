@@ -1,5 +1,7 @@
-const CONSENT_KEY = "learnify.analytics.consent.v1";
-const SESSION_KEY = "learnify.analytics.session.v1";
+const CONSENT_KEY = "lyrna.analytics.consent.v1";
+const SESSION_KEY = "lyrna.analytics.session.v1";
+const LEGACY_CONSENT_KEY = "learnify.analytics.consent.v1";
+const LEGACY_SESSION_KEY = "learnify.analytics.session.v1";
 const POLICY_VERSION = "2026-07-21";
 const SESSION_TIMEOUT_MS = 30 * 60 * 1000;
 const MAX_PENDING_EVENTS = 20;
@@ -83,7 +85,7 @@ function normalizeValue(value) {
 
 export function redactPageUrl(rawUrl) {
   try {
-    const placeholderOrigin = "https://learnify.invalid";
+    const placeholderOrigin = "https://lyrna.invalid";
     const absolute = /^[a-z][a-z0-9+\.-]*:/i.test(rawUrl);
     if (!absolute && !rawUrl.startsWith("/")) return "/";
     const url = new URL(rawUrl, placeholderOrigin);
@@ -106,7 +108,13 @@ export function sanitizeEvent(name, properties = {}) {
 }
 
 function consent() {
-  try { return localStorage.getItem(CONSENT_KEY); } catch (_) { return null; }
+  try {
+    const current = localStorage.getItem(CONSENT_KEY);
+    if (current !== null) return current;
+    const legacy = localStorage.getItem(LEGACY_CONSENT_KEY);
+    if (legacy !== null) localStorage.setItem(CONSENT_KEY, legacy);
+    return legacy;
+  } catch (_) { return null; }
 }
 
 function saveConsent(value) {
@@ -131,7 +139,8 @@ export function track(name, properties = {}) {
 
 function readSession() {
   try {
-    const parsed = JSON.parse(sessionStorage.getItem(SESSION_KEY) || "null");
+    const raw = sessionStorage.getItem(SESSION_KEY) || sessionStorage.getItem(LEGACY_SESSION_KEY);
+    const parsed = JSON.parse(raw || "null");
     if (!parsed || typeof parsed.lastSeen !== "number") return null;
     return {
       startedAt: Number(parsed.startedAt) || Date.now(),
@@ -231,7 +240,7 @@ function loadVercelProvider() {
   window.va("beforeSend", (event) => ({ ...event, url: redactPageUrl(event && event.url) }));
   const script = document.createElement("script");
   script.defer = true;
-  script.dataset.learnifyAnalytics = "vercel";
+  script.dataset.lyrnaAnalytics = "vercel";
   script.src = "https://va.vercel-scripts.com/v1/script.js";
   document.head.appendChild(script);
   providerReady = true;
@@ -245,9 +254,9 @@ function loadVercelProvider() {
 }
 
 function styles() {
-  if (document.getElementById("learnify-analytics-style")) return;
+  if (document.getElementById("lyrna-analytics-style")) return;
   const style = document.createElement("style");
-  style.id = "learnify-analytics-style";
+  style.id = "lyrna-analytics-style";
   style.textContent = `
     .lf-analytics{position:fixed;z-index:10000;left:18px;right:18px;bottom:18px;max-width:680px;margin:auto;padding:18px;border:1px solid #35353b;border-radius:16px;background:#17171a;color:#fff;box-shadow:0 18px 60px rgba(0,0,0,.42);font:14px/1.45 system-ui,sans-serif}
     .lf-analytics[hidden]{display:none}.lf-analytics b{display:block;font-size:16px;margin-bottom:5px}.lf-analytics p{margin:0;color:rgba(255,255,255,.72)}
@@ -261,14 +270,14 @@ function styles() {
 function renderPreferences(forceOpen = false) {
   if (!config?.enabled) return;
   styles();
-  let panel = document.getElementById("learnify-analytics-panel");
+  let panel = document.getElementById("lyrna-analytics-panel");
   if (!panel) {
     panel = document.createElement("section");
-    panel.id = "learnify-analytics-panel";
+    panel.id = "lyrna-analytics-panel";
     panel.className = "lf-analytics";
     panel.setAttribute("role", "dialog");
     panel.setAttribute("aria-label", "Anonymous analytics preferences");
-    panel.innerHTML = `<b>Help improve Learnify?</b><p>Share anonymous, aggregate usage events so we can understand navigation and engagement. We never send searches, article titles, form values, account IDs, or session recordings. <a href="/privacy.html">Privacy details</a>.</p><div class="lf-analytics-actions"><button type="button" data-choice="granted">Allow anonymous analytics</button><button type="button" data-choice="denied">No thanks</button></div>`;
+    panel.innerHTML = `<b>Help improve Lyrna?</b><p>Share anonymous, aggregate usage events so we can understand navigation and engagement. We never send searches, article titles, form values, account IDs, or session recordings. <a href="/privacy.html">Privacy details</a>.</p><div class="lf-analytics-actions"><button type="button" data-choice="granted">Allow anonymous analytics</button><button type="button" data-choice="denied">No thanks</button></div>`;
     panel.addEventListener("click", (event) => {
       const button = event.target.closest("button[data-choice]");
       if (!button) return;
@@ -285,9 +294,9 @@ function renderPreferences(forceOpen = false) {
   }
   panel.hidden = !(forceOpen || consent() === null);
 
-  if (!document.getElementById("learnify-analytics-pref") && consent() !== null) {
+  if (!document.getElementById("lyrna-analytics-pref") && consent() !== null) {
     const button = document.createElement("button");
-    button.id = "learnify-analytics-pref";
+    button.id = "lyrna-analytics-pref";
     button.className = "lf-analytics-pref";
     button.type = "button";
     button.textContent = "Analytics preferences";
@@ -311,7 +320,11 @@ export function openPreferences() {
   renderPreferences(true);
 }
 
-const earlyEvents = Array.isArray(window.learnifyAnalyticsQueue) ? window.learnifyAnalyticsQueue.splice(0) : [];
-window.LearnifyAnalytics = { track, openPreferences, countBucket };
+const earlyEvents = Array.isArray(window.lyrnaAnalyticsQueue)
+  ? window.lyrnaAnalyticsQueue.splice(0)
+  : (Array.isArray(window.learnifyAnalyticsQueue) ? window.learnifyAnalyticsQueue.splice(0) : []);
+window.LyrnaAnalytics = { track, openPreferences, countBucket };
+// Compatibility for older cached pages during the rename rollout.
+window.LearnifyAnalytics = window.LyrnaAnalytics;
 earlyEvents.forEach(([name, properties]) => track(name, properties));
 if (typeof document !== "undefined") initialize();

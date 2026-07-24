@@ -182,7 +182,7 @@ test("content endpoint fails closed for invalid/unlicensed bodies and returns li
 
 test("detail UI preserves source CTA, honest fallback, and textContent-only body rendering", () => {
   const html = readFileSync(new URL("../app/article.html", import.meta.url), "utf8");
-  for (const phrase of ["AI Summary", "Read in Learnify", "Read on", "redistribution permission was not verified", "Licensed full text could not be verified or loaded", "Canonical copy"]) assert.ok(html.includes(phrase), phrase);
+  for (const phrase of ["AI Summary", "Read in Lyrna", "Read on", "redistribution permission was not verified", "Licensed full text could not be verified or loaded", "Canonical copy"]) assert.ok(html.includes(phrase), phrase);
   assert.ok(html.includes("node.textContent = block.text"));
   assert.ok(!html.includes("content.innerHTML"));
   assert.ok(html.indexOf('id="reader"') > html.indexOf("AI Summary"));

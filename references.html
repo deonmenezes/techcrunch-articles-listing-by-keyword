@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Learnify — Reference reels: every Learnify reel in one place</title>
-<meta name="description" content="Every Learnify reel in one place. Watch them as a reference for pace, hooks and on-screen text — then bring your own creativity and your own niche." />
+<title>Lyrna — Reference reels: every Lyrna reel in one place</title>
+<meta name="description" content="Every Lyrna reel in one place. Watch them as a reference for pace, hooks and on-screen text — then bring your own creativity and your own niche." />
 <meta name="theme-color" content="#0B0B0D" />
-<meta property="og:title" content="Learnify — Reference reels" />
-<meta property="og:description" content="Every Learnify reel in one place. Use them as a reference, then make your own in your niche." />
+<meta property="og:title" content="Lyrna — Reference reels" />
+<meta property="og:description" content="Every Lyrna reel in one place. Use them as a reference, then make your own in your niche." />
 <meta property="og:type" content="website" />
-<link rel="icon" href="/assets/learnify/mark.svg" />
-<link rel="apple-touch-icon" href="/assets/learnify/app-icon-1024.png" />
+<link rel="icon" href="/assets/lyrna/mark.svg" />
+<link rel="apple-touch-icon" href="/assets/lyrna/app-icon-1024.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
@@ -105,7 +105,8 @@
   .reel.feat { grid-column: span 1; border-color: rgba(69,219,107,.4); box-shadow: 0 0 0 1px rgba(69,219,107,.25), var(--shadow-md); }
 
   .media { position: relative; background: #000; }
-  .media video { width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; cursor: pointer; }
+  .media video, .media img { width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; }
+  .media video { cursor: pointer; }
   .ig-wrap { padding: 0; background: #000; min-height: 420px; display: grid; place-items: center; }
   .ig-wrap .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; border: 0 !important; box-shadow: none !important; background: #000 !important; }
   .ig-fallback { aspect-ratio: 9/16; width: 100%; display: grid; place-items: center; text-align: center; padding: 26px; gap: 12px;
@@ -143,7 +144,7 @@
     <a class="brand" href="/">
       <span class="brand-logo"><span class="l-mark">L</span></span>
       <div class="brand-text">
-        <h1>Learnify</h1>
+        <h1>Lyrna</h1>
         <span class="tag">reference reels — <b>watch · learn · make your own</b></span>
       </div>
     </a>
@@ -159,12 +160,12 @@
 
 <main>
   <section class="hero">
-    <p class="eyebrow">Reference reels · @learnify.app_</p>
-    <h2>Every Learnify reel, in <em>one place</em>.</h2>
+    <p class="eyebrow">Reference reels · Lyrna</p>
+    <h2>Every Lyrna reel, in <em>one place</em>.</h2>
     <p>Watch these as a <strong>reference</strong> — for the pace, the hooks, the on-screen text and the energy. Then bring your own creativity and your own niche. Don't copy; get inspired.</p>
     <a class="hero-cta" href="https://www.instagram.com/learnify.app_/" target="_blank" rel="noopener">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
-      Follow @learnify.app_
+      Follow Lyrna
     </a>
   </section>
 
@@ -182,7 +183,7 @@
 
 <footer>
   <div class="footer-inner">
-    <span class="fbrand"><span class="l-mark-sm">L</span>Learnify</span> — reference reels for creators in every niche. Use them as inspiration, then make your own. <a href="https://www.instagram.com/learnify.app_/" target="_blank" rel="noopener" style="color:var(--save-green)">@learnify.app_</a>
+    <span class="fbrand"><span class="l-mark-sm">L</span>Lyrna</span> — reference reels for creators in every niche. Use them as inspiration, then make your own. <a href="https://www.instagram.com/learnify.app_/" target="_blank" rel="noopener" style="color:var(--save-green)">Lyrna on Instagram</a>
     <div class="links">
       <a href="/">Feed</a><a href="/ideas">Ideas</a><a href="/influencer">Scripts</a><a href="/influencers">Creator kit</a><a href="/privacy">Privacy</a><a href="/support">Support</a>
     </div>
@@ -191,24 +192,24 @@
 
 <script>
 /* ============================================================
-   REFERENCE REELS — every Learnify reel.
+   REFERENCE REELS — every Lyrna reel.
    To add a reel, drop a new entry in REELS:
      • Instagram reel:  { type:"ig", permalink:"https://www.instagram.com/p/XXXX/", title, note }
-     • Local clip:      { type:"video", src:"/ugc/learnify/video/xxx.mp4", poster:"/ugc/learnify/video/poster/xxx.jpg", title, note }
+     • App preview:     { type:"image", src:"/assets/lyrna/previews/xxx.png", title, note }
    ============================================================ */
 const REELS = [
   { type:"ig", featured:true,
     permalink:"https://www.instagram.com/p/DZZcVZTBV9i/",
     title:"Main reference reel",
     note:"The doomscroll → learn format. Hook in 2s, finding as big text, \"comment link\" CTA." },
-  { type:"video",
-    src:"/ugc/learnify/video/inf1.mp4", poster:"/ugc/learnify/video/poster/inf1.jpg",
-    title:"Real people, real scrolls",
-    note:"The UGC look — creator holding the app, \"FREE. LINK…\" overlay." },
-  { type:"video",
-    src:"/ugc/learnify/video/inf2.mp4", poster:"/ugc/learnify/video/poster/inf2.jpg",
-    title:"\"5 hours a day, gone\"",
-    note:"Strong hook + payoff — learning to code instead of doomscrolling." },
+  { type:"image",
+    src:"/assets/lyrna/previews/daily.png",
+    title:"Daily learning preview",
+    note:"Lead with one clear promise and show the product immediately." },
+  { type:"image",
+    src:"/assets/lyrna/previews/habit.png",
+    title:"Progress and habit preview",
+    note:"Show the payoff: visible momentum, streaks, and a realistic daily goal." },
 ];
 
 const esc = (s)=>String(s||"").replace(/[&<>"']/g,(c)=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -223,6 +224,8 @@ function reelHTML(r){
           <p><b style="color:var(--txt)">${esc(r.title)}</b><br><a href="${esc(r.permalink)}" target="_blank" rel="noopener">Watch on Instagram ↗</a></p>
         </div>
       </blockquote></div>`;
+  } else if(r.type === "image") {
+    media = `<div class="media"><img src="${esc(r.src)}" alt="${esc(r.title)}"></div>`;
   } else {
     media = `<div class="media"><video src="${esc(r.src)}" poster="${esc(r.poster||"")}" muted loop playsinline preload="none" controls></video></div>`;
   }

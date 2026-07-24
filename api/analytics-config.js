@@ -6,6 +6,8 @@ export default function handler(req, res) {
     return res.status(405).json({ error: "method_not_allowed" });
   }
 
-  const enabled = process.env.LEARNIFY_ANALYTICS_ENABLED === "true";
+  const enabled =
+    process.env.LYRNA_ANALYTICS_ENABLED === "true" ||
+    process.env.LEARNIFY_ANALYTICS_ENABLED === "true";
   return res.status(200).json({ enabled, provider: enabled ? "vercel" : null });
 }

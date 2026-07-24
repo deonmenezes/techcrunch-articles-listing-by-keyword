@@ -1,4 +1,4 @@
-// GET /api/articles — mobile-friendly multi-source Learnify feed (JSON).
+// GET /api/articles — mobile-friendly multi-source Lyrna feed (JSON).
 //
 // Query params (all optional):
 //   q        full-text search across title, summary, keywords, author, source
