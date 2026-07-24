@@ -7,9 +7,9 @@ globalThis.window = {};
 
 const { countBucket, durationBucket, redactPageUrl, sanitizeEvent, screenName } = await import("../app/analytics.js");
 test("page-view URLs drop query parameters and fragments", () => {
-  assert.equal(redactPageUrl("https://learnify.example/app/article.html?id=secret#section"), "https://learnify.example/app/article.html");
+  assert.equal(redactPageUrl("https://lyrna.example/app/article.html?id=secret#section"), "https://lyrna.example/app/article.html");
   assert.equal(redactPageUrl("/app/article.html?id=secret#section"), "/app/article.html");
-  assert.equal(redactPageUrl("https://user:password@learnify.example/private?q=secret"), "https://learnify.example/private");
+  assert.equal(redactPageUrl("https://user:password@lyrna.example/private?q=secret"), "https://lyrna.example/private");
   assert.equal(redactPageUrl("javascript:alert(1)"), "/");
   assert.equal(redactPageUrl("not a url"), "/");
 });
@@ -74,7 +74,7 @@ test("every instrumented event is allowlisted", () => {
   const names = new Set();
   for (const file of files) {
     const source = fs.readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
-    for (const match of source.matchAll(/(?:T\.|LearnifyAnalytics\.)?track\(\"([a-z_]+)\"/g)) names.add(match[1]);
+    for (const match of source.matchAll(/(?:T\.|LyrnaAnalytics\.)?track\(\"([a-z_]+)\"/g)) names.add(match[1]);
   }
   assert.ok(names.size >= 20, `expected broad core coverage, found ${names.size} events`);
   for (const name of names) assert.ok(sanitizeEvent(name, {}), `${name} must be in the privacy allowlist`);

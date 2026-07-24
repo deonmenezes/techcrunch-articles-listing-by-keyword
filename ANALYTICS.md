@@ -1,8 +1,8 @@
-# Learnify product analytics
+# Lyrna product analytics
 
-Learnify uses privacy-gated [Vercel Web Analytics](https://vercel.com/docs/analytics) for aggregate product metrics. Analytics is **off by default**, both at deployment and for each visitor. The Vercel script loads only when:
+Lyrna uses privacy-gated [Vercel Web Analytics](https://vercel.com/docs/analytics) for aggregate product metrics. Analytics is **off by default**, both at deployment and for each visitor. The Vercel script loads only when:
 
-1. `LEARNIFY_ANALYTICS_ENABLED=true` is set for the deployment; and
+1. `LYRNA_ANALYTICS_ENABLED=true` is set for the deployment; and
 2. the visitor chooses **Allow anonymous analytics**.
 
 No analytics credentials belong in the repository. Enable Web Analytics for the Vercel project in the Vercel dashboard, add the environment variable, and redeploy. Local static development receives no config endpoint and therefore sends nothing.
@@ -12,7 +12,7 @@ No analytics credentials belong in the repository. Enable Web Analytics for the 
 - Manual custom events only; no autocapture and no session replay. Automatic page views are reduced to origin + path; query strings and fragments are removed before sending.
 - Never send article titles/IDs/URLs, search terms, flashcard or form contents, email addresses, account/user IDs, auth errors/messages, IP addresses as custom properties, or stack traces.
 - Reading history, saved items, XP, and per-article progress remain in the app's existing stores. Analytics only receives coarse aggregate dimensions such as screen, source, category, and action.
-- Consent is stored as `learnify.analytics.consent.v1` in local storage. A visitor can reopen **Analytics preferences** at any time. Declining suppresses all future custom events; the provider is never initialized for visitors who decline.
+- Consent is stored as `lyrna.analytics.consent.v1` in local storage. The former `learnify.analytics.consent.v1` key is migrated automatically. A visitor can reopen **Analytics preferences** at any time. Declining suppresses all future custom events; the provider is never initialized for visitors who decline.
 - A tab-scoped session accumulator is kept in session storage without a user or session identifier. It expires after 30 inactive minutes.
 
 ## Event dictionary
@@ -25,7 +25,7 @@ No analytics credentials belong in the repository. Enable Web Analytics for the 
 | `session_minute` | `minute_bucket` | One completed minute of foreground/visible engagement. |
 | `session_ended` | `duration_bucket`, `reason` | Previous session was closed after a 30-minute inactivity boundary. |
 | `acquisition_cta_clicked` | `destination` | Landing-page CTA to web app or App Store. |
-| `article_selected` | `surface` | A Learnify card/reel was opened. |
+| `article_selected` | `surface` | A Lyrna card/reel was opened. |
 | `article_opened` | `source_id`, `category`, `content_kind`, `auth_state` | Article detail rendered; no article identifier is sent. |
 | `article_link_out` | `surface`, `source_id` | Visitor left for the publisher. |
 | `article_save_toggled` | `surface`, `action`, `auth_state` | Save/remove action. |
@@ -64,9 +64,9 @@ This is a conservative lower bound with less than one minute of rounding loss pe
 
 ## Verification
 
-1. Leave `LEARNIFY_ANALYTICS_ENABLED` unset: no consent UI and no request to `https://va.vercel-scripts.com/v1/script.js` should occur.
+1. Leave `LYRNA_ANALYTICS_ENABLED` unset: no consent UI and no request to `https://va.vercel-scripts.com/v1/script.js` should occur.
 2. Set it to `true` in a preview deployment with Vercel Web Analytics enabled.
 3. Choose **No thanks**: confirm the Vercel script is not requested and events do not appear.
-4. Clear `learnify.analytics.consent.v1`, reload, choose **Allow**, navigate through Latest → Article → publisher, save, and answer a quiz.
+4. Clear `lyrna.analytics.consent.v1`, reload, choose **Allow**, navigate through Latest → Article → publisher, save, and answer a quiz.
 5. Confirm only allowlisted event names/properties appear in Vercel Debug/Analytics. Inspect payloads to verify that titles, URLs, search/form values, account IDs, and error messages are absent.
 6. Keep the page visible for over 60 seconds and confirm one `session_minute` event.

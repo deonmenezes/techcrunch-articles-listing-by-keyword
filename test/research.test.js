@@ -201,7 +201,7 @@ test("unknown topic API requests fail closed with the complete canonical list", 
 
 test("research UI exposes honest states and routes papers through the in-app detail view", () => {
   const html = readFileSync(new URL("../app/research.html", import.meta.url), "utf8");
-  for (const phrase of ["Loading recent papers", "Research could not be loaded", "No recent papers found", "Read in Learnify"]) {
+  for (const phrase of ["Loading recent papers", "Research could not be loaded", "No recent papers found", "Read in Lyrna"]) {
     assert.ok(html.includes(phrase), phrase);
   }
   assert.ok(html.includes("TOPIC_NAMES"));
