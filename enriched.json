@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-23T22:59:16.135Z",
+  "generated_at": "2026-07-24T03:54:13.457Z",
   "model": "nvidia/nemotron-3-super-120b-a12b",
-  "count": 4896,
+  "count": 4878,
   "items": {
     "78530": {
       "title": "Thinner wires, faster electrons: Quantum material challenges copper at chip scale",
@@ -470,14 +470,6 @@
       "media_credit": "Photo: flyzor / BY 2.0 via flickr",
       "media_credit_url": "https://www.flickr.com/photos/30285260@N02/3950177049"
     },
-    "j12pp5": {
-      "title": "Satya Nadella has issued a shocking warning to companies using AI",
-      "t": 1783976877252,
-      "media_url": "https://live.staticflickr.com/5672/29949919183_74ebb78def_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: ITU Pictures / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/42121221@N07/29949919183"
-    },
     "arxiv_13jqmwf": {
       "title": "Contrasting with Symile: Simple Model-Agnostic Representation Learning for Unlimited Modalities",
       "t": 1783981716297,
@@ -718,257 +710,6 @@
       "media_credit": "Photo: US Army Africa / BY 2.0 via flickr",
       "media_credit_url": "https://www.flickr.com/photos/36281822@N08/4553737430"
     },
-    "1k3tefs": {
-      "title": "‘Asia's cleanest village’ bans tourists on Sundays",
-      "t": 1783985314458,
-      "image": "https://ychef.files.bbci.co.uk/624x351/p0nv09zm.jpg",
-      "media_url": "https://live.staticflickr.com/2649/4140191397_a0e3b5d99f.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: devinsampa / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/45041456@N08/4140191397"
-    },
-    "b9tz8g": {
-      "title": "Show HN: I built a one-prompt hackathon platform, free entry, sponsored prizes",
-      "t": 1783985314458,
-      "image": "https://oneshotchallenge.ai/og.png",
-      "media_url": "https://live.staticflickr.com/3402/4646054291_13d1773717_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: cincodenada06 / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/14506798@N00/4646054291"
-    },
-    "5408os": {
-      "title": "Claude is just Mr. Meeseeks",
-      "t": 1783985314458,
-      "image": "https://opengraph.githubassets.com/653088415a8db5f4163b2ad1e0bb73f69b84b6633d13118e5784aaa8f893c9b9/thephw/claude-meseeks",
-      "media_url": "https://live.staticflickr.com/2571/4140191985_68bbbe9e22.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: devinsampa / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/45041456@N08/4140191985"
-    },
-    "imfoqd": {
-      "title": "The Best Movies to Stream This Month (July 2026)",
-      "t": 1783985315146,
-      "media_url": "https://live.staticflickr.com/7243/7382384194_633eca2a23.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: wbaiv / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/9998127@N06/7382384194"
-    },
-    "eckvl9": {
-      "title": "'We have not ruled this out': The water-based battery that could turn whole data centers into energy storage",
-      "t": 1783985315171,
-      "media_url": "https://live.staticflickr.com/4912/31568686487_fac91605fa_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Ray in Manila / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/21186555@N07/31568686487"
-    },
-    "14t7st4": {
-      "title": "iOS 27 Public Beta Is Here: 10 New Features Worth Testing",
-      "t": 1783985315228,
-      "media_url": "https://live.staticflickr.com/53/118136724_982ab3a868_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: dbking / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/65193799@N00/118136724"
-    },
-    "1clnt8k": {
-      "title": "iOS 26.6 Will Warn You About Malicious iMessages",
-      "t": 1783985315534,
-      "media_url": "https://live.staticflickr.com/8286/7516070548_b45c1eaab5_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Karen Roe / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/28752865@N08/7516070548"
-    },
-    "1v8qt05": {
-      "title": "NYT Connections hints and answers for Tuesday, July 14 (game #1129)",
-      "t": 1783985315919,
-      "media_url": "https://live.staticflickr.com/5442/9512595735_91a6cacbd2_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: origamiguy1971 / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/94246383@N00/9512595735"
-    },
-    "imvkgd": {
-      "title": "Quordle hints and answers for Tuesday, July 14 (game #1632)",
-      "t": 1783985315963,
-      "media_url": "https://live.staticflickr.com/5110/5596233024_46a2451ab8_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Patrick Hoesly / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/60057912@N00/5596233024"
-    },
-    "1xws2ri": {
-      "title": "NYT Strands hints and answers for Tuesday, July 14 (game #863)",
-      "t": 1783985316217,
-      "media_url": "https://live.staticflickr.com/1015/5185730912_4b0f602c60_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: rogorno / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/22963605@N05/5185730912"
-    },
-    "x8e8lj": {
-      "title": "Second report says Apple posted its strongest-ever Q2 for iPhone shipments amid market downturn",
-      "t": 1783985316369,
-      "media_url": "https://live.staticflickr.com/1409/4728150808_0a6e44e326_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: MSVG / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/13907834@N00/4728150808"
-    },
-    "6ucnu7": {
-      "title": "Please let this hot pink Pixel 11 leak be real",
-      "t": 1783985316509,
-      "media_url": "https://live.staticflickr.com/8510/8452719735_b6c540bf7a_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Patrick Hoesly / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/60057912@N00/8452719735"
-    },
-    "17zfwft": {
-      "title": "Samsung Galaxy S26 Ultra users are seeing red over screen issue",
-      "t": 1783985316751,
-      "media_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Galaxy_S26_Ultra_Privacy_display_ON.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Kyu3a / BY-SA 4.0 via wikimedia",
-      "media_credit_url": "https://commons.wikimedia.org/w/index.php?curid=185622656"
-    },
-    "1seiv55": {
-      "title": "Hidden in Maya wall writings: A named astronomer emerges from 1,200-year-old calculations",
-      "t": 1783985317067,
-      "media_url": "https://live.staticflickr.com/3866/33296042341_551f9262ee_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: BLM Oregon & Washington / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/50169152@N06/33296042341"
-    },
-    "m97qe6": {
-      "title": "Like photosynthesis in plants: This CPU uses solar power to 'run computations' without the need for batteries",
-      "t": 1783985317115,
-      "media_url": "https://live.staticflickr.com/8120/8748686705_2d51778c2a.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: ImagePros / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/40645329@N06/8748686705"
-    },
-    "u76tkl": {
-      "title": "Sam Neill Inspired a Generation of Scientists",
-      "t": 1783985317194,
-      "media_url": "https://live.staticflickr.com/65535/53466973758_d4515cdfae_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: miguel.discart / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/69506664@N06/53466973758"
-    },
-    "1bcy4x2": {
-      "title": "The infinite scroll may become endangered if controversial Calif. law passes",
-      "t": 1783985317837,
-      "media_url": "https://live.staticflickr.com/2630/4140950240_d53df4111b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: devinsampa / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/45041456@N08/4140950240"
-    },
-    "reddit_1utkvxq": {
-      "title": "[misc] Accidentally dropped my phone on my pimple yesterday and woke up to this monstrosity",
-      "t": 1783985318722,
-      "media_url": "https://live.staticflickr.com/3733/10332674014_18a563defb.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: James Webb Space Telescope / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/50785054@N03/10332674014"
-    },
-    "oa_vfyp9y": {
-      "title": "Towards Accurate Model Selection in Deep Unsupervised Domain Adaptation",
-      "t": 1783985318752,
-      "media_url": "https://live.staticflickr.com/34/73062144_a51d33d4f7_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Elvert Barnes / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/95413346@N00/73062144"
-    },
-    "oa_1xllq73": {
-      "title": "Paper 6 — Multi-Layer Cross Verification in the AGI Era: Role Feasibility, Output Reference, and Pre-Transaction Validation",
-      "t": 1783985319205,
-      "media_url": "https://live.staticflickr.com/8163/7275640430_a23974bcc0_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Tim Evanson / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/23165290@N00/7275640430"
-    },
-    "oa_1xox1rk": {
-      "title": "Tool-Entropy Collapse: A Cross-Architecture Signature of Agent WANDERING Failure",
-      "t": 1783985320394,
-      "media_url": "https://live.staticflickr.com/6012/6016743712_8b9f30f928_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: NWABR / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/64704683@N04/6016743712"
-    },
-    "oa_1xm87i1": {
-      "title": "Paper 1 - BIFACE-Based Sentence Coordinate Documents: Human-Readable Surfaces and AI+AGI-Referable Coordinates Across Documents, Code, Media, and Conversations",
-      "t": 1783985320395,
-      "media_url": "https://live.staticflickr.com/5483/14592386702_f46453e246_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: michaelseangallagher / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/13518023@N03/14592386702"
-    },
-    "oa_1xlkxvh": {
-      "title": "Paper 10 — Consent and Order Candidate Layers in the AGI Era: Non-Executable Action Candidates Before Human Discretion",
-      "t": 1783985320396,
-      "media_url": "https://live.staticflickr.com/3863/14804224326_f5ceae50a6_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: U.S. Geological Survey / CC0 1.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/27784370@N05/14804224326"
-    },
-    "oa_18ixipp": {
-      "title": "Accelerating scientific discovery with Co-Scientist",
-      "t": 1783985320740,
-      "media_url": "https://live.staticflickr.com/3794/13431305713_e5be4edb9c_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: NASA Goddard Photo and Video / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/24662369@N07/13431305713"
-    },
-    "oa_1yy1l7j": {
-      "title": "SΔϕ-62 — World Model Kernel: Observed Trace, Inference, UMR, Binding Status, and Revision Path Protocols (v1.1, AI-Readable Kernel Package)",
-      "t": 1783985320771,
-      "media_url": "https://live.staticflickr.com/1741/42392216182_247b8597bc_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: jurvetson / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/44124348109@N01/42392216182"
-    },
-    "oa_8rbib4": {
-      "title": "Weighted Rules under the Stable Model Semantics",
-      "t": 1783985320805,
-      "media_url": "https://live.staticflickr.com/1048/5116362844_4e7933959c_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Aranami / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/51526368@N03/5116362844"
-    },
-    "oa_5uokky": {
-      "title": "SΔϕ-51 — When Diagnosis Re-enters: From Structural Speech to Structural Editing",
-      "t": 1783985321021,
-      "media_url": "https://live.staticflickr.com/1976/45543828641_4a410945c0_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: tedeytan / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/22526649@N03/45543828641"
-    },
-    "oa_4lfib6": {
-      "title": "THE HOLOGRAPHIC KERNEL IN SEMANTIC ECONOMY: Formal Specification for Reconstructive Compression Across Meaning-Systems, Archives, Protocols, and Web Entities (EA-HK-01 v1.1)",
-      "t": 1783985321066,
-      "media_url": "https://live.staticflickr.com/3344/3312065998_ea35580c37.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: schoschie / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/87569910@N00/3312065998"
-    },
-    "oa_1mmcmv0": {
-      "title": "A Review of 3D GIS for Use in Creating Virtual Historic Dublin",
-      "t": 1783985321155,
-      "media_url": "https://live.staticflickr.com/5180/5390287631_3dfcd79f5d.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: adonofrio (Biology101.org) / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/48784416@N06/5390287631"
-    },
-    "oa_1anmndh": {
-      "title": "Adversarial validation of in silico perturbation profiles for intelligence-associated genes in human prefrontal cortex",
-      "t": 1783985321295,
-      "media_url": "https://live.staticflickr.com/6025/6020351957_857fd6fc22_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: NWABR / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/64704683@N04/6020351957"
-    },
-    "oa_3efct0": {
-      "title": "Metadata Packet for AI Indexing: A Formal Specification for Entity-Level Retrieval Architecture",
-      "t": 1783985321447,
-      "media_url": "https://live.staticflickr.com/7217/7336892606_4310213cf9_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: U.S. Army Combat Capabilities Development Command / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/34402227@N03/7336892606"
-    },
     "arxiv_2jfn9d": {
       "title": "Exploring Security Practices of Smart Contract Developers",
       "t": 1783985321552,
@@ -976,14 +717,6 @@
       "media_kind": "stock",
       "media_credit": "Photo: brewbooks / BY-SA 2.0 via flickr",
       "media_credit_url": "https://www.flickr.com/photos/93452909@N00/6673022987"
-    },
-    "oa_5bog67": {
-      "title": "Periodic Table of Cognition",
-      "t": 1783985321573,
-      "media_url": "https://live.staticflickr.com/5007/5351053812_29ddf6ab46_m.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Mrs. Pugliano / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/54992314@N04/5351053812"
     },
     "arxiv_i57oq0": {
       "title": "ReverseORC: Reverse Engineering of Resizable User Interface Layouts with OR-Constraints",
@@ -1217,90 +950,6 @@
       "media_credit": "Photo: U.S. Geological Survey / CC0 1.0 via flickr",
       "media_credit_url": "https://www.flickr.com/photos/27784370@N05/14804224326"
     },
-    "oa_1c3qs1e": {
-      "title": "The construct of institutional distance through the lens of diverse institutional perspectives: Review, analysis, and future directions.",
-      "t": 1783985324437,
-      "media_url": "https://live.staticflickr.com/4205/35747654815_6af36697a3_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Queensland State Archives / PDM 1.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/60455048@N02/35747654815"
-    },
-    "oa_lwuam2": {
-      "title": "Depth of Processing, learner aptitude, and the acquisition of L2 English grammatical structures",
-      "t": 1783985324495,
-      "media_url": "https://live.staticflickr.com/6081/6093442325_a35f56e41c_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: xdxd_vs_xdxd / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/85227565@N00/6093442325"
-    },
-    "oa_1cypc9o": {
-      "title": "Combating Data and Target Shifts in Visual Tasks",
-      "t": 1783985324709,
-      "media_url": "https://live.staticflickr.com/4655/28247081779_5514148618_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: alisdare1 / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/59952459@N08/28247081779"
-    },
-    "1u5luow": {
-      "title": "What are Forward Deployed Engineers, and why are they so in demand? (2025)",
-      "t": 1783990544987,
-      "image": "https://substackcdn.com/image/fetch/$s_!-Sp9!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6fbaccac-2d71-44fb-bbc4-4de12e939b92_1444x888.png",
-      "media_url": "https://live.staticflickr.com/2681/4140950940_186aec55ba.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: devinsampa / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/45041456@N08/4140950940"
-    },
-    "w2z73g": {
-      "title": "Show HN: Sx 2.0 – Share AI skills with your team through a Dropbox folder",
-      "t": 1783990544987,
-      "image": "https://sleuth-io.github.io/sx/sx/assets/skill-server-hero.png",
-      "media_url": "https://live.staticflickr.com/1061/686562697_5d86ba6d67.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Wesley Clouden / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/40622964@N00/686562697"
-    },
-    "jfho1": {
-      "title": "An Englishwoman who sketched India before photography took hold",
-      "t": 1783990544987,
-      "image": "https://ichef.bbci.co.uk/news/1024/branded_news/153b/live/27ae69b0-76a1-11f1-b7c5-7f4e24437938.jpg",
-      "media_url": "https://live.staticflickr.com/3402/4646054291_13d1773717_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: cincodenada06 / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/14506798@N00/4646054291"
-    },
-    "hbau45": {
-      "title": "A Study of Microsoft's Early 2026 Rollout of Claude Code and GitHub Copilot CLI",
-      "t": 1783990544987,
-      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-      "media_url": "https://live.staticflickr.com/2649/4140191397_a0e3b5d99f.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: devinsampa / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/45041456@N08/4140191397"
-    },
-    "1pp19up": {
-      "title": "Risk of darkness looms across Europe and America as power-hungry AI data centers and electric cars drain the grid, decimate factory capacity, and engineer a four-year wait for transformers",
-      "t": 1783990545720,
-      "media_url": "https://live.staticflickr.com/5587/15172980536_caece4bbf3_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: darkday. / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/99649389@N02/15172980536"
-    },
-    "1m4a3tr": {
-      "title": "iOS 27 public beta: Should you install it on your iPhone?",
-      "t": 1783990546376,
-      "media_url": "https://live.staticflickr.com/8425/7570844310_da23541baa_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: infomatique / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/80824546@N00/7570844310"
-    },
-    "k1jrcv": {
-      "title": "How redefining one word strips the Endangered Species Act's ability to protect vital habitat",
-      "t": 1783990546443,
-      "media_url": "https://live.staticflickr.com/2712/4096857101_b10d53a325.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: jurvetson / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/44124348109@N01/4096857101"
-    },
     "10hecgt": {
       "title": "Uber’s product chief on hotels, robotaxis, and why the company doesn’t want to be “everything for everyone”",
       "t": 1783990546485,
@@ -1317,38 +966,6 @@
       "media_credit": "Photo: jurvetson / BY 2.0 via flickr",
       "media_credit_url": "https://www.flickr.com/photos/44124348109@N01/25047577618"
     },
-    "1g4fts2": {
-      "title": "Dead stars in our cosmic backyard: Astronomers spot four white dwarfs hiding under our noses",
-      "t": 1783990547086,
-      "media_url": "https://live.staticflickr.com/1078/1393906757_d0962ac75d_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: jurvetson / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/44124348109@N01/1393906757"
-    },
-    "3w25s7": {
-      "title": "OpenAI could force Apple into an awkward fight with Jony Ive",
-      "t": 1783990547530,
-      "media_url": "https://live.staticflickr.com/3942/15558667478_93ca015cf4_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: dave.see / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/9639178@N08/15558667478"
-    },
-    "4uar91": {
-      "title": "OnePlus is reportedly days away from calling it quits in the US",
-      "t": 1783990547568,
-      "media_url": "https://live.staticflickr.com/744/31752053213_6dc4de6254_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Råzvan B / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/91265124@N03/31752053213"
-    },
-    "1qbunjd": {
-      "title": "Oakland has changed its plan to sell the Coliseum yet again. Here’s how it will work.",
-      "t": 1783990548306,
-      "media_url": "https://live.staticflickr.com/5805/21585070369_728951f9fa_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Ken Lund / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/75683070@N00/21585070369"
-    },
     "19q8yf1": {
       "title": "X just tweaked its algorithm to make it more friendly, less battleground",
       "t": 1783990548758,
@@ -1356,118 +973,6 @@
       "media_kind": "stock",
       "media_credit": "Photo: Sean MacEntee / BY 2.0 via flickr",
       "media_credit_url": "https://www.flickr.com/photos/18090920@N07/7746516458"
-    },
-    "1dzoaru": {
-      "title": "Hermes agent maker Nous Research in talks for new funding at $1.5B valuation",
-      "t": 1783990549038,
-      "media_url": "https://live.staticflickr.com/5628/30284645320_6c22cf0fa5_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: ITU Pictures / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/42121221@N07/30284645320"
-    },
-    "x_2076796336200954047": {
-      "title": "Open source multiplies the full-stack advantage. PyTorch has surpassed 700 million PyPI downloads with CUDA support — co-evolved with a decade of NVIDIA architecture advances.. Open source frameworks…",
-      "t": 1783990549340,
-      "media_url": "https://live.staticflickr.com/2517/3926747868_297e035609_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: SparkFunElectronics / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/41898857@N04/3926747868"
-    },
-    "x_2076796314306617590": {
-      "title": "As organizations move from AI pilots to production, infrastructure decisions have shifted from peak chip specs to cost per token: how many useful tokens they can deliver per dollar, per watt, and…",
-      "t": 1783990549868,
-      "media_url": "https://live.staticflickr.com/65535/48133612468_a8f2401ac8_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Arlington National Cemetery / PDM 1.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/60564189@N06/48133612468"
-    },
-    "ixzn6u": {
-      "title": "Former NOAA employees built Climate.us to preserve climate data and resources",
-      "t": 1783990550265,
-      "media_url": "https://live.staticflickr.com/2663/4140950816_e131180c13.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: devinsampa / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/45041456@N08/4140950816"
-    },
-    "zp3hxu": {
-      "title": "The US government warns that Russia state hackers are coming after your router",
-      "t": 1783990550629,
-      "media_url": "https://live.staticflickr.com/1364/1155965622_fc8ff5f32d_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: torres21 / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/30864080@N00/1155965622"
-    },
-    "2sj4jo": {
-      "title": "US continues to shun Ebola-infected citizens; second American sent to Germany",
-      "t": 1783990550737,
-      "media_url": "https://live.staticflickr.com/8209/8220291997_8ae139c67f_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: MDGovpics / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/64018555@N03/8220291997"
-    },
-    "x_2076719544727716287": {
-      "title": "While the differences between models are modest overall, we find that each Claude model sits at a different point along these value axes. Sonnet 4.6, for example, is more playful and affirming, while…",
-      "t": 1783990551170,
-      "media_url": "https://live.staticflickr.com/4003/4261987342_bc803958c3_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: JD Hancock / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/83346641@N00/4261987342"
-    },
-    "x_2076719540785012872": {
-      "title": "In previous research, we found that Claude expresses over 3,000 values, like honesty and warmth. In new work, we asked how the values Claude expresses vary between Claude models and across languages.…",
-      "t": 1783990551248,
-      "media_url": "https://live.staticflickr.com/8491/8378891860_7668ef50af_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: conner395 / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/91779914@N00/8378891860"
-    },
-    "x_2076690662196490454": {
-      "title": "What’s the saying about the early bird and the worm? 🐦🪱 #NVIDIAGTC Berlin discounted pricing is available for a limited time only - join us for the latest in AI, accelerated computing, robotics,…",
-      "t": 1783990551746,
-      "media_url": "https://live.staticflickr.com/7008/6765129393_aa20d683bc_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Eva Rinaldi Celebrity Photographer / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/58820009@N05/6765129393"
-    },
-    "x_2076686114631340046": {
-      "title": "Here’s how we used the Predicting the Past Skill in Google @Antigravity to track down a Roman ring thief, map an ancient cult across Europe, and reconstruct the networks of people visiting a Greek…",
-      "t": 1783990552287,
-      "media_url": "https://live.staticflickr.com/65535/52404135587_c02e2f8ec9.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: James Webb Space Telescope / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/50785054@N03/52404135587"
-    },
-    "reddit_1utwvzj": {
-      "title": "Ransomware negotiator hired to represent victims was working for the attackers",
-      "t": 1783990552465,
-      "media_url": "https://live.staticflickr.com/8637/15913350497_5048b48dff_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: jurvetson / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/44124348109@N01/15913350497"
-    },
-    "oa_1a2eab6": {
-      "title": "Water D/H in 3I/ATLAS as a probe of formation conditions in another planetary system",
-      "t": 1783990552927,
-      "media_url": "https://live.staticflickr.com/1101/1194604271_031cabfac4_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Manitoba Historical Maps / BY 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/11496488@N07/1194604271"
-    },
-    "oa_1yjsbdn": {
-      "title": "Positive Cosmic Redundancy Principle and the Moral Value of Becoming a Multiplanetary Species",
-      "t": 1783990553272,
-      "media_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Gaia%27s_10th_anniversary_ESA25359024.png",
-      "media_kind": "stock",
-      "media_credit": "Photo: European Space Agency / BY-SA 3.0 via wikimedia",
-      "media_credit_url": "https://commons.wikimedia.org/w/index.php?curid=142492624"
-    },
-    "oa_1ra0lmf": {
-      "title": "Hot subdwarf stars from the Hamburg Quasar Survey",
-      "t": 1783990553582,
-      "media_url": "https://live.staticflickr.com/2481/3542273496_3d1a2ec8be_b.jpg",
-      "media_kind": "stock",
-      "media_credit": "Photo: Constantine Agustin / BY-SA 2.0 via flickr",
-      "media_credit_url": "https://www.flickr.com/photos/11249521@N00/3542273496"
     },
     "1meqtob": {
       "title": "Japan develops a method to recover up to 90% of lithium from used EV batteries",
@@ -39639,6 +39144,353 @@
       "media_kind": "stock",
       "media_credit": "Photo: jurvetson / BY 2.0 via flickr",
       "media_credit_url": "https://www.flickr.com/photos/44124348109@N01/28799579322"
+    },
+    "muhs7z": {
+      "title": "A Taxonomy of Omnicidal Futures Involving Artificial Intelligence",
+      "t": 1784851605865,
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "media_url": "https://live.staticflickr.com/3402/4646054291_13d1773717_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: cincodenada06 / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/14506798@N00/4646054291"
+    },
+    "1d9cqc1": {
+      "title": "98.css",
+      "t": 1784851605865,
+      "image": "https://github.com/jdan/98.css/raw/main/docs/window.png?raw=true",
+      "media_url": "https://live.staticflickr.com/2669/4140191319_7dc49ddca2.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: devinsampa / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/45041456@N08/4140191319"
+    },
+    "svm4zk": {
+      "title": "An FDA Panel Just Endorsed These Unproven Peptides",
+      "t": 1784851607703,
+      "media_url": "https://live.staticflickr.com/8289/7851413638_735990d525_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: NASA Goddard Photo and Video / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/24662369@N07/7851413638"
+    },
+    "cufd9w": {
+      "title": "How researchers are using AI to speed up drug discovery and development: Q&A",
+      "t": 1784851607709,
+      "media_url": "https://live.staticflickr.com/4815/45870729485_c12dfdea3f_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Free Public Domain Illustrations by rawpixel / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/153584064@N07/45870729485"
+    },
+    "m4j4lh": {
+      "title": "Meet the judges who will crown Australia’s next breakout startup",
+      "t": 1784851607773,
+      "media_url": "https://live.staticflickr.com/3745/8960342527_d2ea71d59b_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: LeWeb14 / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/86704644@N00/8960342527"
+    },
+    "1r4tpnc": {
+      "title": "Earlier toilet training could curb growing diaper waste crisis",
+      "t": 1784851608041,
+      "media_url": "https://live.staticflickr.com/3554/3329126318_a80058fa57_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Alan Stanton / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/53921762@N00/3329126318"
+    },
+    "1ai1mv0": {
+      "title": "Scuba divers underestimate how much damage they do to coral reefs. We've watched hundreds to find out why",
+      "t": 1784851608061,
+      "media_url": "https://live.staticflickr.com/5137/5548912574_31aace9c61_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Dan Lundberg / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/9508280@N07/5548912574"
+    },
+    "1a570sv": {
+      "title": "Nvidia's latest trick for cooling its data center hardware is... hot water? 'Hot liquid cooling' is warmer than a hot tub, but apparently does the job pretty well",
+      "t": 1784851608429,
+      "media_url": "https://live.staticflickr.com/8400/8669956137_dcb917a1b8_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Richard Masoner / Cyclelicious / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/99247795@N00/8669956137"
+    },
+    "1o21soq": {
+      "title": "Researchers replace downloaded macOS apps with evil twins, Apple shrugs",
+      "t": 1784851608460,
+      "media_url": "https://live.staticflickr.com/4148/5087254587_90ecd8f7db_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Jordanhill School D&T Dept / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/42042252@N02/5087254587"
+    },
+    "138ljw9": {
+      "title": "AI unlocks Atlantic circulation insights from 20 years of ocean float data",
+      "t": 1784851608790,
+      "media_url": "https://live.staticflickr.com/7421/27947742316_7a20d36eea_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: NASA Goddard Space Flight Center / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/35278629@N08/27947742316"
+    },
+    "rfl7on": {
+      "title": "A new 'golden age' of mathematics may be dawning, thanks to AI and human ingenuity",
+      "t": 1784851608827,
+      "media_url": "https://live.staticflickr.com/4017/4711793692_3698d01f94_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: dynamosquito / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/25182210@N07/4711793692"
+    },
+    "17p18eo": {
+      "title": "Alan Turing's gay short story reveals 'fun, cheeky' man who loved sex and literature",
+      "t": 1784851609046,
+      "media_url": "https://live.staticflickr.com/3870/14856060889_2cff72c340_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: sam92026 / CC0 1.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/101215602@N05/14856060889"
+    },
+    "1t2cbpu": {
+      "title": "Could alien signals be hiding on a different radio channel?",
+      "t": 1784851609084,
+      "media_url": "https://live.staticflickr.com/65535/50412324277_4f76c2d9fc_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: freespacephotos / CC0 1.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/187631144@N02/50412324277"
+    },
+    "185edec": {
+      "title": "Microsoft launches new in-house AI models it says cut costs up to 89% versus OpenAI",
+      "t": 1784851609144,
+      "media_url": "https://live.staticflickr.com/4203/34115314813_1279e4d75a_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: mripp / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/56218409@N03/34115314813"
+    },
+    "5dcmba": {
+      "title": "NYT Connections hints and answers for Friday, July 24 (game #1139)",
+      "t": 1784851609285,
+      "media_url": "https://live.staticflickr.com/7289/9515384838_11dfc9c60d_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: origamiguy1971 / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/94246383@N00/9515384838"
+    },
+    "1or27h9": {
+      "title": "NYT Strands hints and answers for Friday, July 24 (game #873)",
+      "t": 1784851609299,
+      "media_url": "https://live.staticflickr.com/1304/5185128545_039ffbfe0b_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: rogorno / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/22963605@N05/5185128545"
+    },
+    "rslfqm": {
+      "title": "Quordle hints and answers for Friday, July 24 (game #1642)",
+      "t": 1784851609350,
+      "media_url": "https://live.staticflickr.com/6147/5921557529_0a1427652e_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Pink Poppy Photography / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/64620837@N05/5921557529"
+    },
+    "x_2080351159638704615": {
+      "title": "Launching Health in ChatGPT to U.S. users. 300 million people use ChatGPT each week for health queries (and my wife and I are among those!). You can now securely connect supported medical records so…",
+      "t": 1784851609620,
+      "media_url": "https://live.staticflickr.com/8481/8204920551_40ecbb04fe_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Eva Rinaldi Celebrity Photographer / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/58820009@N05/8204920551"
+    },
+    "reddit_1v4b5lf": {
+      "title": "Microsoft is cracking down on Windows 11 bloatware ads, forces LG to pull McAfee popup",
+      "t": 1784851609702,
+      "media_url": "https://live.staticflickr.com/6082/6117361107_949ec3ab1b_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Tim Dorr / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/60723528@N00/6117361107"
+    },
+    "x_2080326297260072992": {
+      "title": "What a moment for @NPS_Monterey and the public sector. At Converge @ NPS, our CEO Jensen Huang joined federal leaders and ecosystem partners to commission the #NVIDIADGX GB300 system, providing 1,500…",
+      "t": 1784851609710,
+      "media_url": "https://live.staticflickr.com/2929/14178502454_c1bbf4d7a2_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: altotemi / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/66490057@N07/14178502454"
+    },
+    "reddit_1v3o5tm": {
+      "title": "Dr. Rhonda Patrick here. My new episode with immunologist Dr. Derya Unutmaz explores why the next 10 years of may be the most consequential longevity window in human history. His prediction: longevity escape velocity within 8–10 years, followed by the possibility of complete age reversal within 15.",
+      "t": 1784851609832,
+      "media_url": "https://live.staticflickr.com/5161/5373996658_c656fabe0e.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: MattGrommes / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/44124449820@N01/5373996658"
+    },
+    "oa_1872nis": {
+      "title": "Recent Advances in Raman Spectral Classification with Machine Learning",
+      "t": 1784851609991,
+      "media_url": "https://live.staticflickr.com/7136/7846742530_8eb4048eff_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: NASA Goddard Photo and Video / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/24662369@N07/7846742530"
+    },
+    "oa_uv5xso": {
+      "title": "Optimizing solar and wind forecasting with iHow optimization algorithm and multi-scale attention networks",
+      "t": 1784851611019,
+      "media_url": "https://live.staticflickr.com/8466/8435181650_2bfb42ca7e_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: IAEA Imagebank / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/35068899@N03/8435181650"
+    },
+    "oa_lsj2rd": {
+      "title": "Advances in 3D Organoids and Organ‐on‐a‐Chip Systems for Biomedical Research",
+      "t": 1784851611022,
+      "media_url": "https://live.staticflickr.com/5328/10035813273_7a8f077425_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Gwydion M. Williams / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/45909111@N00/10035813273"
+    },
+    "9980ey": {
+      "title": "The Corporate Creep of Plex: Why it may be time to move to Jellyfin",
+      "t": 1784865247367,
+      "image": "https://reprodev.com/content/images/size/w1200/2026/07/Ghost-Blog-Featured-ThursdayThinkpiece01.png",
+      "media_url": "https://live.staticflickr.com/1061/686562697_5d86ba6d67.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Wesley Clouden / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/40622964@N00/686562697"
+    },
+    "gllg4r": {
+      "title": "Apple art director shares early sketches and prototype of Lil’ Finder Guy",
+      "t": 1784865248065,
+      "media_url": "https://live.staticflickr.com/2263/2219981333_556e7cf8e8_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Digiart2001 | jason.kuffer / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/44072707@N00/2219981333"
+    },
+    "16w5xr4": {
+      "title": "'Bigger, brighter and lighter': It was love at first use with the 3rd-generation Amazon Kindle Scribe (2025), but its height and price make it unwieldy",
+      "t": 1784865248775,
+      "media_url": "https://live.staticflickr.com/6139/5995012076_0bdf394287_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Wesley Fryer / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/31442459@N00/5995012076"
+    },
+    "15i1nsa": {
+      "title": "Researchers explore classroom applications of AI new learning platforms",
+      "t": 1784865248829,
+      "media_url": "https://live.staticflickr.com/4127/5071486857_932f645e5d_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Matthias Rhomberg / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/33772123@N03/5071486857"
+    },
+    "tg3mc4": {
+      "title": "3D-printed bioplastic pods offer new hope for seagrass restoration in Thailand",
+      "t": 1784865249057,
+      "media_url": "https://live.staticflickr.com/8335/8094652826_cd883deb08_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: giulia.forsythe / CC0 1.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/59217476@N00/8094652826"
+    },
+    "3189r4": {
+      "title": "Police Removed Prominent Scientists from the ADA Meeting. Researchers Respond",
+      "t": 1784865249252,
+      "media_url": "https://live.staticflickr.com/2630/4140950240_d53df4111b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: devinsampa / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/45041456@N08/4140950240"
+    },
+    "4f4g7l": {
+      "title": "Plant scientist explains the impact of the EU's new gene-editing rules",
+      "t": 1784865249870,
+      "media_url": "https://live.staticflickr.com/65535/51497901234_85af64ea4c_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: IAEA Imagebank / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/35068899@N03/51497901234"
+    },
+    "ff203q": {
+      "title": "Microsoft fiber foul-up cut off Azure California for almost five hours",
+      "t": 1784865249902,
+      "media_url": "https://live.staticflickr.com/37/95571306_bac2e765ab_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: exceedcharge / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/49353237@N00/95571306"
+    },
+    "vtijaz": {
+      "title": "Pickleball comedy ‘The Dink’ premieres on Apple TV",
+      "t": 1784865250438,
+      "media_url": "https://live.staticflickr.com/6051/6228336759_ccfa5dae7f.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Eva Rinaldi Celebrity Photographer / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/58820009@N05/6228336759"
+    },
+    "4fkmeb": {
+      "title": "Who holds power? Puerto Ricans' distrust runs deep",
+      "t": 1784865250532,
+      "media_url": "https://live.staticflickr.com/7824/47398266822_aeb5332761_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: giulia.forsythe / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/59217476@N00/47398266822"
+    },
+    "1867eng": {
+      "title": "How AI guardrails are impeding the work of offensive cybersecurity researchers",
+      "t": 1784865251419,
+      "media_url": "https://live.staticflickr.com/4190/33721186053_e0d41fb5a2_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: ITU Pictures / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/42121221@N07/33721186053"
+    },
+    "146g0wu": {
+      "title": "Mitochondrial mechanism links protein folding to heme production and cell energy",
+      "t": 1784865251444,
+      "media_url": "https://live.staticflickr.com/7200/7070656551_f679c8f87c_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: cnicholsonpath / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/76113756@N07/7070656551"
+    },
+    "1l0rzqv": {
+      "title": "How an iceberg may have stopped emperor penguins from breeding on Coulman Island in 2025",
+      "t": 1784865251733,
+      "media_url": "https://live.staticflickr.com/1406/4606910978_fc07109f30_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: thezenderagenda.com / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/92402750@N00/4606910978"
+    },
+    "i286fe": {
+      "title": "Apple’s trade secrets lawsuit against OpenAI reassigned to new judge",
+      "t": 1784865252201,
+      "media_url": "https://live.staticflickr.com/5579/14475161456_7b5185329b_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Ken Lund / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/75683070@N00/14475161456"
+    },
+    "tk2eus": {
+      "title": "Recoverable molecular helper guides synthesis of highly pure chiral rotaxanes",
+      "t": 1784865252541,
+      "media_url": "https://live.staticflickr.com/5463/9195856288_e66c700d8e_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: Idaho National Laboratory / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/30369883@N03/9195856288"
+    },
+    "19tstk5": {
+      "title": "The Visual 6502",
+      "t": 1784865252589,
+      "media_url": "https://live.staticflickr.com/2681/4140950940_186aec55ba.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: devinsampa / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/45041456@N08/4140950940"
+    },
+    "xmplwf": {
+      "title": "OpenAI-Hugging Face attack doesn't mean agents are evil – unless you tell them to be",
+      "t": 1784865252667,
+      "media_url": "https://live.staticflickr.com/31/56919158_9c178af382_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: nedrichards / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/35034348080@N01/56919158"
+    },
+    "1n84hg1": {
+      "title": "Mourning Dan Williams",
+      "t": 1784865253036,
+      "media_url": "https://live.staticflickr.com/2681/4140950940_186aec55ba.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: devinsampa / BY 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/45041456@N08/4140950940"
+    },
+    "reddit_1v3rih4": {
+      "title": "Alphabet capex 100% up yoy to 44B",
+      "t": 1784865253453,
+      "media_url": "https://live.staticflickr.com/2050/2444398515_cf2089cbde_b.jpg",
+      "media_kind": "stock",
+      "media_credit": "Photo: liryon / BY-SA 2.0 via flickr",
+      "media_credit_url": "https://www.flickr.com/photos/77789339@N00/2444398515"
     }
   }
 }
