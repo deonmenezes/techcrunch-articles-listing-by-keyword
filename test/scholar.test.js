@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { apifyToken, hasApifyToken, redact, runActorSync, ApifyError } from "../lib/apify.js";
-import { parsePublicationInfo, normalizeScholarPaper, estimateScholarCostUsd, SCHOLAR_USD_PER_PAPER } from "../lib/scholar.js";
+import { parsePublicationInfo, normalizeScholarPaper, estimateScholarCostUsd, fetchScholarPapers, SCHOLAR_ACTOR } from "../lib/scholar.js";
 import { venueScore, worldScore, scoreBreakdown, paperKey, mergePapers, rankWorld, scoringDate, RANK_WEIGHTS } from "../lib/world-rank.js";
 import { scholarPapersForTopic, loadScholarSnapshot } from "../lib/scholar-snapshot.js";
 import { TOPIC_NAMES, rollingCutoff } from "../lib/topics.js";
@@ -22,6 +22,21 @@ function scholarRow(overrides = {}) {
     citedBy: 246,
     pdfUrl: "https://www.cell.com/patterns/pdf/S2666-3899(25)00218-1.pdf",
     id: "e4dTRPAtLz8J",
+    ...overrides,
+  };
+}
+
+// The same paper as a johnvc/google-scholar-api search row.
+function scholarApiRow(overrides = {}) {
+  return {
+    position: 0,
+    result_id: "e4dTRPAtLz8J",
+    paper_title: "Toward large reasoning models: A survey of reinforced reasoning",
+    link: "https://www.cell.com/patterns/fulltext/S2666-3899(25)00218-1",
+    snippet: "We explain how automated construction of reasoning data and process-level reward models advance the frontier of AI reasoning.",
+    publication_info: { summary: "F Xu, Q Hao, C Shao, Z Zong, Y Li… - Patterns, 2025 - cell.com", authors: [] },
+    resources: [{ title: "cell.com", file_format: "PDF", link: "https://www.cell.com/patterns/pdf/S2666-3899(25)00218-1.pdf" }],
+    inline_links: { cited_by_total: 246 },
     ...overrides,
   };
 }
@@ -95,10 +110,50 @@ test("Scholar normalization rejects every unusable or out-of-window row", () => 
   assert.equal(normalizeScholarPaper(null, { now: NOW }), null);
 });
 
+test("google-scholar-api rows normalize to the same paper as lite-shape rows", () => {
+  const fromApi = normalizeScholarPaper({ ...scholarApiRow(), searchTerm: "large language model reasoning" }, { topic: "AI / ML", now: NOW });
+  assert.deepEqual(fromApi, normalizeScholarPaper(scholarRow(), { topic: "AI / ML", now: NOW }));
+  // An error row from the actor has no paper_title and is dropped, not thrown.
+  assert.equal(normalizeScholarPaper({ error_type: "UpstreamError", message: "x" }, { now: NOW }), null);
+});
+
 test("cost is predictable before a single dollar is spent", () => {
-  assert.equal(SCHOLAR_USD_PER_PAPER, 0.0015);
-  assert.equal(estimateScholarCostUsd(46, 10), 0.69); // all 23 topics, 2 queries each
+  // One run per query: start fee + one results page + a tiny per-row fee, rounded up.
+  assert.equal(estimateScholarCostUsd(1, 10), 0.0202);
+  assert.equal(estimateScholarCostUsd(46, 10), 0.9251); // all 23 topics, 2 queries each
   assert.equal(estimateScholarCostUsd(0, 10), 0);
+  assert.equal(estimateScholarCostUsd(1, 50), estimateScholarCostUsd(1, 20)); // one page holds at most 20
+});
+
+test("each query is its own capped run, and the budget drops whole queries", async () => {
+  const calls = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    const body = JSON.parse(init.body);
+    calls.push({ url: new URL(url), body });
+    const row = scholarApiRow({ link: `https://example.org/${encodeURIComponent(body.q)}` });
+    return new Response(JSON.stringify([row]), { status: 200 });
+  };
+  try {
+    const result = await fetchScholarPapers(["first query", "second query", "third query"], {
+      maxPerSearch: 10,
+      yearFrom: CUTOFF_YEAR,
+      budgetUsd: 0.05, // buys two runs at $0.0202
+      now: NOW,
+      topicOf: () => "AI / ML",
+      env: { APIFY_TOKEN: "apify_api_" + "A".repeat(30) },
+    });
+    assert.equal(calls.length, 2);
+    assert.ok(calls[0].url.pathname.endsWith(`/acts/${SCHOLAR_ACTOR}/run-sync-get-dataset-items`));
+    assert.deepEqual(calls[0].body, { mode: "search", q: "first query", num: 10, max_pages: 1, hl: "en", as_ylo: CUTOFF_YEAR });
+    assert.equal(calls[0].url.searchParams.get("maxTotalChargeUsd"), "0.0202");
+    assert.deepEqual(result.termsRun, ["first query", "second query"]);
+    assert.deepEqual(result.skipped, ["third query"]);
+    assert.deepEqual(result.papers.map((paper) => paper.scholar_query), ["first query", "second query"]);
+    assert.equal(result.papers[0].topic, "AI / ML");
+  } finally {
+    globalThis.fetch = realFetch;
+  }
 });
 
 test("venue prestige is a bounded, openly-listed heuristic", () => {

@@ -7,11 +7,13 @@
 //   node scripts/snapshot-scholar.mjs --budget 0.25 --per 8
 //   node scripts/snapshot-scholar.mjs --dry-run       # cost plan, no spend
 //
-// BUDGET IS THE POINT. The actor bills $0.0015 per paper, so a full refresh of
-// all 23 topics x 2 queries x 10 papers is about $0.69. Defaults are sized for
-// an Apify free plan ($5/month of credit): one full refresh per run, a $1.00
-// per-run ceiling, and round-robin topic rotation so a small budget still keeps
-// every topic moving instead of starving the tail.
+// BUDGET IS THE POINT. The actor bills about $0.02 per query (a start fee plus
+// one results page), so a full refresh of all 23 topics x 2 queries x 10 papers
+// is about $0.93. Defaults are sized for an Apify free plan ($5/month of
+// credit): one full refresh per run, a $1.00 per-run ceiling, and round-robin
+// topic rotation so a small budget still keeps every topic moving instead of
+// starving the tail. On a free plan the actor returns a 5-paper preview per
+// query.
 //
 // Failure is non-destructive. A run that collects nothing exits non-zero and
 // leaves the previous snapshot untouched, so a bad night degrades to stale data
@@ -20,7 +22,7 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { TOPICS, rollingCutoff } from "../lib/topics.js";
-import { fetchScholarPapers, estimateScholarCostUsd, SCHOLAR_ACTOR, SCHOLAR_USD_PER_PAPER } from "../lib/scholar.js";
+import { fetchScholarPapers, estimateScholarCostUsd, SCHOLAR_ACTOR, SCHOLAR_MAX_PER_SEARCH } from "../lib/scholar.js";
 import { hasApifyToken } from "../lib/apify.js";
 
 const OUT = fileURLToPath(new URL("../scholar-snapshot.json", import.meta.url));
@@ -45,7 +47,7 @@ function arg(name, fallback = null) {
 }
 
 const dryRun = arg("dry-run", false) !== false;
-const perSearch = Math.max(1, Math.min(50, Number(arg("per", process.env.SCHOLAR_MAX_PER_SEARCH || 10))));
+const perSearch = Math.max(1, Math.min(SCHOLAR_MAX_PER_SEARCH, Number(arg("per", process.env.SCHOLAR_MAX_PER_SEARCH || 10))));
 const budgetUsd = Math.max(0.01, Number(arg("budget", process.env.SCHOLAR_BUDGET_USD || 1.0)));
 const topicFilter = String(arg("topics", process.env.SCHOLAR_TOPICS || "") || "")
   .split(",").map((value) => value.trim()).filter(Boolean);
@@ -81,7 +83,7 @@ const plan = [];
 for (const topic of selected) {
   for (const query of topic.queries) plan.push({ topic: topic.name, term: query });
 }
-const affordable = Math.max(0, Math.floor(budgetUsd / (perSearch * SCHOLAR_USD_PER_PAPER)));
+const affordable = Math.max(0, Math.floor(budgetUsd / estimateScholarCostUsd(1, perSearch)));
 const runPlan = plan.slice(0, affordable);
 const deferred = plan.slice(affordable);
 const projected = estimateScholarCostUsd(runPlan.length, perSearch);
